@@ -70,6 +70,15 @@
   visibility: visible;
 }
 
+/* Prevent transition tweens from altering animation */
+.ui.animating.transition {
+  -webkit-transition: none;
+  -moz-transition: none;
+  -o-transition: none;
+  -ms-transition: none;
+  transition: none;
+}
+
 /* Disabled */
 .ui.disabled.transition {
   -webkit-animation-play-state: paused;

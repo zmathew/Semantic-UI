@@ -7,7 +7,6 @@ semantic.dropdown.ready = function() {
   var
     $examples         = $('.example'),
     $hoverDropdown    = $examples.filter('.hover').find('.ui.dropdown'),
-    $formDropdown     = $examples.filter('.form').find('.ui.dropdown'),
     $dropdown         = $examples.filter('.dropdown').find('.ui.dropdown:not(.simple)'),
     $transition       = $examples.filter('.transition').find('.ui.dropdown'),
     $transitionButton = $examples.filter('.transition').find('.ui.button').first(),
@@ -40,11 +39,7 @@ semantic.dropdown.ready = function() {
       activate: true
     })
   ;
-  $formDropdown
-    .dropdown({
-      action: 'updateForm'
-    })
-  ;
+
   $hoverDropdown
     .dropdown({
       on: 'hover'

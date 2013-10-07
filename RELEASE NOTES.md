@@ -2,6 +2,10 @@
 
 ### Version 0.3.6 - Oct 2, 2013
 
+**Fixes**
+- Fixes popup side being reversed for top left, top right, bottom left, bottom right
+- Fixes offstage popups showing in offstage position on second showing
+
 **Docs**
 - Updates form and accordion docs
 
