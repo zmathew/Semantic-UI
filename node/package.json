@@ -1,10 +1,10 @@
 {
   "semantic": {
     "name": "Semantic UI",
-    "version": "0.3.6"
+    "version": "0.4.3"
   },
   "dependencies": {
-    "docpad": "~6.53.0",
+    "docpad": "~6.53.1",
     "docpad-plugin-eco": "~2.0.2",
     "docpad-plugin-ghpages": "~2.4.0",
     "docpad-plugin-partials": "~2.8.0"
@@ -22,6 +22,7 @@
     "grunt-css": "~0.5.4",
     "grunt-contrib-compress": "~0.5.2",
     "grunt-contrib-concat": "~0.3.0",
-    "grunt-docco-multi": "0.0.2"
+    "grunt-docco-multi": "0.0.2",
+    "grunt-cssjanus": "~0.1.1"
   }
 }

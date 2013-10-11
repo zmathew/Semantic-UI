@@ -1,10 +1,34 @@
 ## RELEASE NOTES
 
+### Version 0.4.1 - Oct 9, 2013
+
+**Fixes**
+- Fixes heart rating color
+
+### Version 0.4.0 - Oct 8, 2013
+
+**Updates**
+- Updated some checkbox stylings
+- Checkboxes markup now more semantic with default markup including only one label tag that can be inside ui checkbox
+
+### Version 0.3.8 - Oct 8, 2013
+
+**Fixes**
+- Display issues with accordion
+
+### Version 0.3.7 - Oct 8, 2013
+
+**Fixes**
+- Fixes modal show/hide action reversal in Webkit
+
+**Updates**
+- Dimmer can now take different durations for its show and hide
+
 ### Version 0.3.6 - Oct 7, 2013
 
 **Fixes**
-- Fixes popup side being reversed for top left, top right, bottom left, bottom right
-- Fixes offstage popups showing in offstage position on second showing
+- Fixes popup position sometimes appearing off-stage on second apperance
+- Fixes popup positions top left, top right, bottom left, bottom right being flipped
 
 **Docs**
 - Updates form and accordion docs
@@ -12,8 +36,8 @@
 **Updates**
 - Dropdown action default is now automatically determined based on type of dropdown, select dropdowns now will update form fields with default options
 - Adds fluid variation to accordion
-- Adds some html5 form support for forms (deneuxa)
-- Fields can now include both a field or another level of fields
+- Adds more html5 form support for forms (deneuxa)
+- Fields can include both field and another level of fields
 
 ### Version 0.3.5 - Oct 2, 2013
 
