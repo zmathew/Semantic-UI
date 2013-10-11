@@ -1,29 +1,18 @@
 module.exports = function(grunt) {
 
   var
+
     defaultTasks = [
       // watch less folder
       'watch'
     ],
 
     watchTasks = [
-      // clean build directory
-      'clean:build',
+      // compiles less to docs
+      'less:buildDocsCSS',
 
-      // compiles less
-      'less:buildCSS',
-
-      // create concatenated css release
-      'concat:concatenateCSS',
-
-      // create concatenated js release
-      'concat:concatenateJS',
-
-      // copies assets and js over to build dir
-      'copy:srcToBuild',
-
-      // copies semantic over to docs
-      'copy:buildToDocs',
+      // copies assets and js over to docs
+      'copy:srcToDocs',
 
       // copies examples over to docs
       'copy:examplesToDocs'
@@ -66,6 +55,9 @@ module.exports = function(grunt) {
       // generate code docs
       'docco:generate',
 
+      // cleans previous generated release
+      'clean:release',
+
       // creates release zip
       'compress:everything',
 
@@ -74,9 +66,6 @@ module.exports = function(grunt) {
 
       // create rtl release
       'cssjanus:rtl',
-
-      // cleans docs build folder
-      'clean:docs',
 
       // copies spec files over to docs
       'copy:specToDocs',
@@ -87,6 +76,26 @@ module.exports = function(grunt) {
       // copies files over to docs
       'copy:buildToDocs'
     ],
+
+    setWatchFiles = function(action, filePath) {
+      var
+        buildPath = filePath.replace('../src/', '../docs/build/').replace('less', 'css')
+      ;
+      if(filePath.search('.less') !== -1) {
+        grunt.config('less.buildDocsCSS.src', filePath);
+        grunt.config('less.buildDocsCSS.dest', buildPath);
+      }
+      else {
+        grunt.config('less.buildDocsCSS.src', 'non/existant/path');
+        grunt.config('less.buildDocsCSS.dest', 'non/existant/path');
+      }
+    },
+
+    // this allows filenames with multiple extensions to be preserved
+    preserveFileExtensions = function(folder, filename) {
+      return folder + filename.substring(0, filename.lastIndexOf('.') ) + '.css';
+    },
+
     config
   ;
 
@@ -101,6 +110,9 @@ module.exports = function(grunt) {
     // watches for changes in a source folder
     watch: {
       scripts: {
+        options: {
+          spawn: false
+        },
         files: [
           '../build/examples/**/*',
           '../src/**/*.less',
@@ -115,14 +127,20 @@ module.exports = function(grunt) {
     *******************************/
 
     clean: {
-      build : {
-        cwd: '../build',
-        src: '*'
+      options: {
+        force: true
       },
-      docs : {
-        cwd: 'src/files/build/',
-        src: '*'
-      }
+      build : [
+        '../build/less',
+        '../build/minified',
+        '../build/packaged',
+        '../build/uncompressed'
+      ],
+      release : [
+        '../docs/build',
+        '../docs',
+        '../rtl'
+      ]
     },
 
     docco: {
@@ -156,28 +174,80 @@ module.exports = function(grunt) {
     },
 
     less: {
+
       options: {
+        paths        : ['../src'],
         compress     : false,
         optimization : 2
       },
+
+      // optimized for watch, src is built on watch task using callbacks
+      buildDocsCSS: {
+        src    : '../src',
+        dest   : '../docs/build/uncompressed/',
+        rename : preserveFileExtensions
+      },
+
       buildCSS: {
-        options : {
-          paths : ['../build']
-        },
         expand : true,
         cwd    : '../src',
         src    : [
           '**/*.less'
         ],
         dest : '../build/uncompressed/',
-        // this allows multiple dot names to be preserved
-        rename: function(folder, filename) {
-          return folder + filename.substring(0, filename.lastIndexOf('.') ) + '.css';
-        }
+        rename: preserveFileExtensions
       }
     },
 
     copy: {
+
+      srcToDocs: {
+
+        files: [
+          // exact copy for less
+          {
+            expand : true,
+            cwd    : '../src/**/*.less',
+            src    : [
+              '**/*'
+            ],
+            dest : '../docs/build/less'
+          },
+          // copy everything but less files for uncompressed release
+          {
+            expand : true,
+            cwd    : '../src/',
+            src    : [
+              '**/*.js',
+              'images/*',
+              'fonts/*'
+            ],
+            dest : '../docs/build/uncompressed'
+          },
+          // copy everything but less for minified release
+          {
+            expand : true,
+            cwd    : '../src/',
+            src    : [
+              '**/*.js',
+              'images/*',
+              'fonts/*'
+            ],
+            dest : '../docs/build/minified'
+          },
+
+          // copy assets only for packaged version
+          {
+            expand : true,
+            cwd    : '../src/',
+            src    : [
+              'images/*',
+              'fonts/*'
+            ],
+            dest : '../docs/build/packaged'
+          }
+        ]
+      },
 
       srcToBuild: {
 
@@ -227,7 +297,7 @@ module.exports = function(grunt) {
         ]
       },
 
-      // copy assets to rtl
+      // create new rtl assets
       buildToRTL: {
         files: [
           {
@@ -250,7 +320,7 @@ module.exports = function(grunt) {
             src    : [
               '**'
             ],
-            dest   : 'src/files/build/'
+            dest   : '../docs/build/'
           }
         ]
       },
@@ -264,7 +334,7 @@ module.exports = function(grunt) {
             src    : [
               '**'
             ],
-            dest   : 'src/files/spec/'
+            dest   : '../docs/spec/'
           }
         ]
       },
@@ -274,11 +344,11 @@ module.exports = function(grunt) {
         files: [
           {
             expand : true,
-            cwd    : '../examples',
+            cwd    : '../build/examples',
             src    : [
               '**'
             ],
-            dest   : 'src/files/examples/'
+            dest   : '../docs/examples/'
           }
         ]
       }
@@ -288,7 +358,7 @@ module.exports = function(grunt) {
 
     compress: {
       options: {
-        archive: 'src/files/build/semantic.zip'
+        archive: '../docs/build/semantic.zip'
       },
       everything: {
         files: [
@@ -424,5 +494,8 @@ module.exports = function(grunt) {
   grunt.registerTask('default', defaultTasks);
 
   grunt.registerTask('build', buildTasks);
+
+  // compiles only changed less files <https://npmjs.org/package/grunt-contrib-watch>
+  grunt.event.on('watch', setWatchFiles);
 
 };

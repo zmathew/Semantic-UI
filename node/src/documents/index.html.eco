@@ -4,6 +4,7 @@ css    : 'index'
 title  : 'Getting Started'
 type   : 'Semantic'
 ---
+
 <% uiElements    = @getCollection("uiElements").toJSON() %>
 <% uiCollections = @getCollection("uiCollections").toJSON() %>
 <% uiViews       = @getCollection("uiViews").toJSON() %>
@@ -14,7 +15,7 @@ type   : 'Semantic'
   <div class="ui page grid">
     <div class="column">
       <div class="introduction">
-        <h1 class="ui header">Semantic UI <a class="ui black label" href="https://github.com/jlukic/Semantic-UI/blob/master/RELEASE%20NOTES.md">0.3.7</a></h1>
+        <h1 class="ui header">Semantic UI <a class="ui black label" href="https://github.com/jlukic/Semantic-UI/blob/master/RELEASE%20NOTES.md">0.4.3</a></h1>
         <h2 class="ui header">UI is the vocabulary of the web.</h2>
         <p>Semantic empowers designers and developers by creating a language for sharing UI.</p>
         <a class="ui black large labeled launch icon button"><i class="icon list layout"></i> View UI</a>
@@ -260,8 +261,14 @@ type   : 'Semantic'
   </div>
 </div>
 <div class="ui divider"></div>
+
 <div class="ui divided horizontal footer link list">
-  <a href="https://github.com/jlukic/Semantic-UI" class="item">Github</a>
-  <a href="http://www.quirky.com" class="item">Quirky.com</a>
   <div class="item">jack lukic 2013</div>
+  <a href="https://github.com/jlukic/Semantic-UI" class="item">Github</a>
+  <div class="item">
+    Made possibly by <a href="http://www.quirky.com" target="_blank" class="item">Quirky.com</a>
+  </div>
+  <div class="item">
+    Tested with <a href="http://www.browserstack.com" target="_blank" class="item">Browser Stack</a>
+  </div>
 </div>
