@@ -8,11 +8,11 @@ module.exports = function(grunt) {
     ],
 
     watchTasks = [
-      // auto prefix source files
-      'autoprefixer:prefix',
-
       // compiles less to docs
       'less:buildDocsCSS',
+
+      // auto prefix doc files
+      'autoprefixer:prefixDocs',
 
       // copies assets and js over to docs
       'copy:srcToDocs',
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
       // creates minified css of each file
       'cssmin:minifyCSS',
 
-      // creates custom license in header
+      // adds custom license in header
       'cssmin:addBanner',
 
       // create concatenated css release
@@ -76,6 +76,8 @@ module.exports = function(grunt) {
       // creates custom license in header
       'cssmin:addBanner',
 
+      // auto prefix build files
+      'autoprefixer:prefixBuild',
 
       // cleans previous generated release
       'clean:release',
@@ -93,7 +95,13 @@ module.exports = function(grunt) {
       'copy:examplesToDocs',
 
       // copies files over to docs
-      'copy:buildToDocs'
+      'copy:buildToDocs',
+
+      // generate code docs
+      'docco:generate',
+
+      // copies spec files over to docs
+      'copy:specToDocs'
     ],
 
     setWatchTests = function(action, filePath) {
@@ -121,6 +129,7 @@ module.exports = function(grunt) {
       if(filePath.search('.less') !== -1) {
         grunt.config('less.buildDocsCSS.src', filePath);
         grunt.config('less.buildDocsCSS.dest', buildPath);
+        grunt.config('autoprefixer.prefixDocs.src', buildPath);
       }
       else {
         grunt.config('less.buildDocsCSS.src', 'non/existant/path');
@@ -194,8 +203,11 @@ module.exports = function(grunt) {
       options: {
         browsers: ['last 2 version', 'ie 9']
       },
-      prefix: {
-        src : 'src/**/*.less'
+      prefixBuild: {
+        src : 'build/**/*.css'
+      },
+      prefixDocs: {
+        src : 'docs/build/**/*.css'
       }
     },
 
