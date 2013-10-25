@@ -13,22 +13,21 @@
 
 $.fn.shape = function(parameters) {
   var
-    $allModules     = $(this),
-    $body           = $('body'),
+    $allModules    = $(this),
+    $body          = $('body'),
 
-    time            = new Date().getTime(),
-    performance     = [],
+    moduleSelector = $allModules.selector || '',
+    time           = new Date().getTime(),
+    performance    = [],
 
-    query           = arguments[0],
-    methodInvoked   = (typeof query == 'string'),
-    queryArguments  = [].slice.call(arguments, 1),
+    query          = arguments[0],
+    methodInvoked  = (typeof query == 'string'),
+    queryArguments = [].slice.call(arguments, 1),
     returnedValue
   ;
-
   $allModules
     .each(function() {
       var
-        moduleSelector  = $allModules.selector || '',
         settings        = $.extend(true, {}, $.fn.shape.settings, parameters),
 
         // internal aliases

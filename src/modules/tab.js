@@ -309,7 +309,6 @@
             ;
           }
           else if($.api !== undefined) {
-            console.log(settings.apiSettings);
             requestSettings = $.extend(true, { headers: { 'X-Remote': true } }, settings.apiSettings, apiSettings);
             module.debug('Retrieving remote content', fullTabPath, requestSettings);
             $.api( requestSettings );
