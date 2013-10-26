@@ -95,7 +95,6 @@ $.api = $.fn.api = function(parameters) {
             requestSettings,
             promise,
             url,
-            formData       = {},
             data,
             ajaxSettings   = {},
             xhr
@@ -122,6 +121,7 @@ $.api = $.fn.api = function(parameters) {
           }
           else {
             url = module.add.urlData( module.get.templateURL() );
+            module.debug('API url resolved to', url);
           }
 
           // exit conditions reached from missing url parameters
@@ -216,7 +216,7 @@ $.api = $.fn.api = function(parameters) {
                         ? $module.data(term)
                         : urlData[term]
                   ;
-                  module.verbose('Looking for variable', term, $module, $module.data(term), urlData[term]);
+                  module.verbose('Looking for variable', term);
                   // remove optional value
                   if(termValue === false) {
                     module.debug('Removing variable from URL', urlVariables);
@@ -224,7 +224,7 @@ $.api = $.fn.api = function(parameters) {
                   }
                   // undefined condition
                   else if(termValue === undefined || !termValue) {
-                    module.error(error.missingParameter + term);
+                    module.error(error.missingParameter, term);
                     url = false;
                     return false;
                   }
@@ -238,7 +238,7 @@ $.api = $.fn.api = function(parameters) {
           }
         },
 
-        event: {
+        promise: {
           complete: function() {
             if(settings.stateContext) {
               $context
@@ -322,9 +322,9 @@ $.api = $.fn.api = function(parameters) {
           promise: function() {
 
             return $.Deferred()
-              .always(module.complete)
-              .done(module.done)
-              .fail(module.error)
+              .always(module.promise.complete)
+              .done(module.promise.done)
+              .fail(module.promise.error)
             ;
           }
 
@@ -374,10 +374,10 @@ $.api = $.fn.api = function(parameters) {
             ;
             action = action || $module.data(settings.metadata.action) || settings.action || false;
             if(action) {
-              module.debug('Retrieving url for: ', action);
+              module.debug('Looking up url for action', action);
               if(settings.api[action] !== undefined) {
                 url = settings.api[action];
-                module.debug('Found action url', url);
+                module.debug('Found template url', url);
               }
               else {
                 module.error(error.missingAction);
@@ -583,7 +583,7 @@ $.api.settings = {
   namespace    : 'api',
 
   debug        : true,
-  verbose      : true,
+  verbose      : false,
   performance  : true,
 
   // event binding
@@ -607,7 +607,7 @@ $.api.settings = {
   cache         : true,
 
   // state
-  loadingDuration : 200,
+  loadingDuration : 1000,
   errorDuration   : 2000,
 
   // callbacks
