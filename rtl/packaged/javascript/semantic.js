@@ -6535,7 +6535,6 @@ $.fn.popup = function(parameters) {
             $offsetParent = $target.offsetParent();
           }
           else {
-            console.log('found by refresh');
             $popup = $window.children(selector.popup).last();
           }
         },
