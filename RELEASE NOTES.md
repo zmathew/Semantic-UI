@@ -1,5 +1,25 @@
 ## RELEASE NOTES
 
+### Version 0.8.2 - Oct 28, 2013
+
+**Fixes**
+- **Modal** - Quick Fix for modal events in IE
+- **Menu** - Fixes arrow direction on vertical menu dropdown
+- **Button** - Fixes button height issue with button groups including icon and normal buttons
+
+**Docs**
+- Fixes some missing closing tags
+
+### Version 0.8.1 - Oct 26, 2013
+
+**Fixes**
+- **Button** - Fixes colored version sometime losing white text color
+- **Button** - Fixes 1pixel jump on animated fade buttons
+
+**Docs**
+- Prefixer now used for prefixing in grunt
+- Spelling fixes
+
 ### Version 0.8.0 - Oct 25, 2013
 
 **New**
