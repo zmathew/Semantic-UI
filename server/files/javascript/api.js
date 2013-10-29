@@ -13,10 +13,12 @@ semantic.api.ready = function() {
     server = sinon.fakeServer.create()
   ;
 
+  server.autoRespond = true;
+  server.autoRespondAfter = 100;
+
   server
     .respondWith(method, '/api/follow/5209', [responseCode, headers, body])
   ;
-
 };
 
 
