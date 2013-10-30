@@ -647,6 +647,7 @@ semantic.ready = function() {
   if( $pageTabs.size() > 0 ) {
     $pageTabs
       .tab({
+        context   : '.main.container',
         onTabInit : handler.makeCode,
         onTabLoad : function() {
           $.waypoints('refresh');

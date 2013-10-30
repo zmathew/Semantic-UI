@@ -12,6 +12,7 @@
 ;(function ( $, window, document, undefined ) {
 
 $.api = $.fn.api = function(parameters) {
+
   var
     // use window context if none specified
     $allModules     = $.isFunction(this)
