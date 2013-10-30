@@ -427,7 +427,7 @@ $.fn.state = function(parameters) {
               }
             }
             else {
-              module.debug('Text is already sane, ignoring update', text);
+              module.debug('Text is already same, ignoring update', text);
             }
           }
         },

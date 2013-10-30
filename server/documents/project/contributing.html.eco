@@ -82,7 +82,7 @@ type        : 'Semantic Project'
 
     <h3 class="ui header">Example Layouts</h3>
 
-    <p>We are looking to create example layouts with Semantic to help people make sites quicker, and to learn the intracicies of using Semantic UI. The plan is to eventually create a sister site <b>learnsemantic.com</b> which will contain useful features for learning to use Semantic.</p>
+    <p>We are looking to create example layouts with Semantic to help people make sites quicker, and to learn the intricacies of using Semantic UI. The plan is to eventually create a sister site <b>learnsemantic.com</b> which will contain useful features for learning to use Semantic.</p>
 
     <a class="ui teal vertical animated button" href="mailto:jacklukic@gmail.com?Subject=I%20would%20love%20to%20work%20on%20%3Cinsert%20feature%20name%3E&Body=Hey%2C%20I%20just%20wanted%20to%20introduce%20myself%0A%0A%3CHere%27s%20a%20link%20to%20info%20about%20me%20or%20my%20github%3E%0A%0A%3CHere%27s%20a%20bit%20about%20what%20i%20need%20to%20help%20contribute%3E%0A%0A%3CHere%27s%20how%20i%20think%20i%27ll%20get%20started%20on%20that%20feature%3E">
       <div class="visible content">Help code this</div>
