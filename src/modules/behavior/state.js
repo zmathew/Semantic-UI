@@ -30,6 +30,7 @@ $.fn.state = function(parameters) {
     metadata      = settings.metadata,
     className     = settings.className,
     namespace     = settings.namespace,
+    selector      = settings.selector,
     states        = settings.states,
     text          = settings.text,
 
@@ -43,6 +44,9 @@ $.fn.state = function(parameters) {
     .each(function() {
       var
         $module       = $(this),
+        $text         = ( $module.find(selector.text).size() > 0 )
+          ? $module.find(selector.text)
+          : $module,
 
         element       = this,
         instance      = $module.data(moduleNamespace),
@@ -59,57 +63,30 @@ $.fn.state = function(parameters) {
             module.add.defaults();
           }
 
-          // bind events with delegated events
-          if(settings.context && moduleSelector !== '') {
-            if( module.allows('hover') ) {
-              $(element, settings.context)
-                .on(moduleSelector, 'mouseenter' + eventNamespace, module.enable.hover)
-                .on(moduleSelector, 'mouseleave' + eventNamespace, module.disable.hover)
-              ;
-            }
-            if( module.allows('down') ) {
-              $(element, settings.context)
-                .on(moduleSelector, 'mousedown' + eventNamespace, module.enable.down)
-                .on(moduleSelector, 'mouseup'   + eventNamespace, module.disable.down)
-              ;
-            }
-            if( module.allows('focus') ) {
-              $(element, settings.context)
-                .on(moduleSelector, 'focus' + eventNamespace, module.enable.focus)
-                .on(moduleSelector, 'blur'  + eventNamespace, module.disable.focus)
-              ;
-            }
-            $(settings.context)
-              .on(moduleSelector, 'mouseenter' + eventNamespace, module.change.text)
-              .on(moduleSelector, 'mouseleave' + eventNamespace, module.reset.text)
-              .on(moduleSelector, 'click'      + eventNamespace, module.toggle.state)
-            ;
-          }
-          else {
-            if( module.allows('hover') ) {
-              $module
-                .on('mouseenter' + eventNamespace, module.enable.hover)
-                .on('mouseleave' + eventNamespace, module.disable.hover)
-              ;
-            }
-            if( module.allows('down') ) {
-              $module
-                .on('mousedown' + eventNamespace, module.enable.down)
-                .on('mouseup'   + eventNamespace, module.disable.down)
-              ;
-            }
-            if( module.allows('focus') ) {
-              $module
-                .on('focus' + eventNamespace, module.enable.focus)
-                .on('blur'  + eventNamespace, module.disable.focus)
-              ;
-            }
+          if( module.allows('hover') ) {
             $module
-              .on('mouseenter' + eventNamespace, module.change.text)
-              .on('mouseleave' + eventNamespace, module.reset.text)
-              .on('click'      + eventNamespace, module.toggle.state)
+              .on('mouseenter' + eventNamespace, module.enable.hover)
+              .on('mouseleave' + eventNamespace, module.disable.hover)
             ;
           }
+          if( module.allows('down') ) {
+            $module
+              .on('mousedown' + eventNamespace, module.enable.down)
+              .on('mouseup'   + eventNamespace, module.disable.down)
+            ;
+          }
+          if( module.allows('focus') ) {
+            $module
+              .on('focus' + eventNamespace, module.enable.focus)
+              .on('blur'  + eventNamespace, module.disable.focus)
+            ;
+          }
+          $module
+            .on('mouseenter' + eventNamespace, module.change.text)
+            .on('mouseleave' + eventNamespace, module.reset.text)
+            .on('click'      + eventNamespace, module.toggle.state)
+          ;
+
           module.instantiate();
         },
 
@@ -232,13 +209,10 @@ $.fn.state = function(parameters) {
 
         toggle: {
           state: function() {
-            var
-              apiRequest = $module.data(metadata.promise)
-            ;
             if( module.allows('active') && module.is.enabled() ) {
               module.refresh();
-              if(apiRequest !== undefined) {
-                module.listenTo(apiRequest);
+              if($.fn.api !== undefined && $module.api('get xhr') !== undefined) {
+                module.listenTo($module.api('get request'));
               }
               else {
                 module.change.state();
@@ -269,11 +243,6 @@ $.fn.state = function(parameters) {
               })
             ;
           }
-          // xhr exists but set to false, beforeSend killed the xhr
-          else {
-            settings.activateTest   = function(){ return false; };
-            settings.deactivateTest = function(){ return false; };
-          }
         },
 
         // checks whether active/inactive state can be given
@@ -301,19 +270,19 @@ $.fn.state = function(parameters) {
                   module.verbose('Changing text to hover text', text.hover);
                   module.update.text(text.hover);
                 }
-                else if(text.disable) {
-                  module.verbose('Changing text to disable text', text.disable);
-                  module.update.text(text.disable);
+                else if(text.deactivate) {
+                  module.verbose('Changing text to disable text', text.deactivate);
+                  module.update.text(text.deactivate);
                 }
               }
               else {
                 if(text.hover) {
-                  module.verbose('Changing text to hover text', text.disable);
+                  module.verbose('Changing text to hover text', text.deactivate);
                   module.update.text(text.hover);
                 }
-                else if(text.enable){
-                  module.verbose('Changing text to enable text', text.enable);
-                  module.update.text(text.enable);
+                else if(text.activate){
+                  module.verbose('Changing text to enable text', text.activate);
+                  module.update.text(text.activate);
                 }
               }
             }
@@ -360,10 +329,7 @@ $.fn.state = function(parameters) {
 
         get: {
           text: function() {
-            return (settings.selector.text)
-              ? $module.find(settings.selector.text).text()
-              : $module.html()
-            ;
+            $text.text();
           },
           textFor: function(state) {
             return text[state] || false;
@@ -411,17 +377,17 @@ $.fn.state = function(parameters) {
               currentText = module.get.text()
             ;
             if(text && text !== currentText) {
-              module.debug('Updating text', text);
-              if(settings.selector.text) {
-                $module
-                  .data(metadata.storedText, text)
-                  .find(settings.selector.text)
-                    .text(text)
+              module.debug('Updating text', $text, text);
+              $text
+                .data(metadata.storedText, text)
+              ;
+              if( $module.find(selector.text).size() > 0 ) {
+                $text
+                  .text(text)
                 ;
               }
               else {
-                $module
-                  .data(metadata.storedText, text)
+                $text
                   .html(text)
                 ;
               }
@@ -521,9 +487,6 @@ $.fn.state = function(parameters) {
             title += ' ' + totalTime + 'ms';
             if(moduleSelector) {
               title += ' \'' + moduleSelector + '\'';
-            }
-            if($allModules.size() > 1) {
-              title += ' ' + '(' + $allModules.size() + ')';
             }
             if( (console.group !== undefined || console.table !== undefined) && performance.length > 0) {
               console.groupCollapsed(title);
@@ -657,8 +620,6 @@ $.fn.state.settings = {
     active : '.disabled'
   },
 
-  context    : false,
-
   // error
   error: {
     method : 'The method you called is not defined.'
@@ -672,30 +633,30 @@ $.fn.state.settings = {
 
   // change class on state
   className: {
+    active  : 'active',
+    down    : 'down',
     focus   : 'focus',
     hover   : 'hover',
-    down    : 'down',
-    active  : 'active',
     loading : 'loading'
   },
 
   selector: {
     // selector for text node
-    text: false
+    text: '.text'
   },
 
   defaults : {
     input: {
-      hover   : true,
-      focus   : true,
-      down    : true,
-      loading : false,
-      active  : false
+      hover   : false,
+      focus   : false,
+      down    : false,
+      loading : true,
+      active  : true
     },
     button: {
-      hover   : true,
+      hover   : false,
       focus   : false,
-      down    : true,
+      down    : false,
       active  : true,
       loading : true
     }
@@ -710,12 +671,12 @@ $.fn.state.settings = {
   },
 
   text     : {
-    flash    : false,
-    hover    : false,
-    active   : false,
-    inactive : false,
-    enable   : false,
-    disable  : false
+    activate   : false,
+    active     : false,
+    deactivate : false,
+    inactive   : false,
+    flash      : false,
+    hover      : false
   }
 
 };
