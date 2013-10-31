@@ -1472,7 +1472,9 @@ body.progress .ui.progress .bar {
     padding: 0% 8%;
   }
   #example .examples {
+    overflow: hidden;
     margin-right: 400px;
+    padding: 1px;
   }
   #example .fixed.column,
   #example .fixed.column .fixed {

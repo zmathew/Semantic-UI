@@ -14,7 +14,7 @@ semantic.api.ready = function() {
   ;
 
   server.autoRespond = true;
-  server.autoRespondAfter = 100;
+  server.autoRespondAfter = 500;
 
   server
     .respondWith(method, '/api/follow/5209', [responseCode, headers, body])

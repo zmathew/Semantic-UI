@@ -14,10 +14,13 @@ type        : 'UI Behavior'
 
 <div class="main container">
   <div class="ui active tab" data-tab="overview">
-    <div class="ui header">Why use API?</div>
-    <p>Semantic API helps attach server events to UI elements. There a few key features which make API more useful then jQuery AJAX or and simpler than MVC patterns.</p>
-    <div class="ui piled segment">
+    <div class="ui raised segment">
       <div class="ui two column stackable grid">
+        <div class="row">
+          <div class="sixteen wide column">
+            <p>Semantic API helps attach server events to UI elements. There a few key features which make API more useful then jQuery AJAX or and simpler than MVC patterns.</p>
+          </div>
+        </div>
         <div class="row">
           <div class="column">
             <div class="content">
@@ -54,11 +57,17 @@ type        : 'UI Behavior'
     <div class="fixed column">
       <div class="content">
         <h2 class="ui header">Demo</h2>
-        <div class="ui search left action icon input">
-          <i class="search icon"></i>
-          <input type="text" placeholder="Search Issues...">
-          <div class="ui teal button">
-            Search
+        <div class="ui items">
+          <div class="item">
+            <div class="image">
+              <img src="/images/demo/highres3.jpg">
+            </div>
+            <div class="content">
+              <div class="ui fluid adopt toggle button" data-id="5209">
+                <i class="checkmark icon"></i>
+                <span class="text">Adopt</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -72,14 +81,10 @@ type        : 'UI Behavior'
       <p>For the sake of this example we will use Github's public API as an example</p>
       <div class="evaluated code">
         /* "Config.js" - Define API endpoints once globally */
-        var
-          baseURL = 'https://api.github.com/',
-          api = {
-            'search issues' : baseURL + '/search/issues?q={$value}+{$repository}',
-            'search code'   : baseURL + '/search/code?q={$value}+{$repository}',
-          }
-        ;
-        $.fn.api.settings.api = api;
+        $.fn.api.settings.api = {
+          'follow user' : '/api/follow/{$id}',
+          'user info'   : '/api/user/{$id}'
+        };
       </div>
       <div class="code" data-type="html">
         <!-- Include on any page using API !-->
@@ -91,14 +96,9 @@ type        : 'UI Behavior'
       <p>Any element can have an API action attached, by default the action will occur on the most relevant event for the type of element. For example a button will use on <code>click</code> or an input <code>oninputchange</code></p>
 
       <div class="evaluated code">
-      $('.search input')
+      $('.adopt.button')
         .api({
-          action: 'search issues',
-          urlData: {
-            repository: '@jlukic/Semantic-UI'
-          },
-          complete: function(response) {
-          }
+          action: 'follow user'
         })
       ;
       </div>
@@ -107,12 +107,13 @@ type        : 'UI Behavior'
       <p>API couples well with <a href="#">ui state</a>, a component used for managing text state and class names of elements.</p>
       <p>State will automatically apply the class <code>active</code> on API success, and update any text nodes with new values specified. This example updates the text of a follow button to "following" when the API action is successful, after flashing the text success.</p>
       <div class="evaluated code">
-      $('.follow.button')
+      $('.adopt.button')
         .state({
           text: {
-            inactive : 'Follow',
-            active   : 'Following',
-            flash    : 'Success'
+            inactive   : 'Adopt',
+            active     : 'Adopted',
+            deactivate : 'Undo',
+            flash      : 'Success'
           }
         })
       ;
@@ -122,12 +123,12 @@ type        : 'UI Behavior'
 
       <p>When an API action occurs, templated url data is replaced with data you specify to be sent to the server.</p>
       <div class="code" data-type="html">
-        <div class="ui follow button" data-id="5209"></div>
+        <div class="ui adopt button" data-id="5209"></div>
       </div>
       <div class="ui horizontal divider">Or</div>
       <p>Alternatively you can modify the data before sending to server</p>
       <div class="code">
-      $('.follow.button')
+      $('.adopt.button')
         .api('setting', 'beforeSend', function(settings) {
           settings.urlData.id = 5209;
           return settings;
