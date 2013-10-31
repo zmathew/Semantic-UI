@@ -101,8 +101,6 @@ $.api = $.fn.api = function(parameters) {
 
         query: function() {
 
-
-          console.log(module.is.loading());
           // determine if an api event already occurred
           if(module.is.loading() && !settings.allowMultiple) {
             module.debug('Request cancelled previous request is still pending');
@@ -145,13 +143,8 @@ $.api = $.fn.api = function(parameters) {
             return;
           }
 
-          // promise handles notification on api request, so loading min. delay can occur for all notifications
-          module.request = module.create.request();
-
           // add loading state
-          if(settings.stateContext) {
-            module.set.loading();
-          }
+          module.set.loading();
 
           // look for jQuery ajax parameters in settings
           ajaxSettings = $.extend(true, {}, settings, {
@@ -166,6 +159,8 @@ $.api = $.fn.api = function(parameters) {
 
           module.verbose('Creating AJAX request with settings', ajaxSettings);
 
+          // request provides a wrapper around xhr
+          module.request = module.create.request();
           module.xhr = module.create.xhr();
 
         },
@@ -273,9 +268,9 @@ $.api = $.fn.api = function(parameters) {
               $.proxy(settings.complete, $context)();
             },
             done: function(response) {
-              module.debug('API request received');
+              module.debug('API request received', response);
               if(settings.dataType == 'json') {
-                module.debug('Determining if response message passes success test', settings.successTest, response);
+                module.debug('Checking JSON', settings.successTest, response);
                 if( $.isFunction(settings.successTest) && settings.success(response) ) {
                   $.proxy(settings.success, $context)(response, $module);
                 }
@@ -363,11 +358,11 @@ $.api = $.fn.api = function(parameters) {
 
         remove: {
           error: function() {
-            module.verbose('Removing error state to element', $context);
+            module.verbose('Removing error state from element', $context);
             $context.removeClass(className.error);
           },
           loading: function() {
-            module.verbose('Removing loading state to element', $context);
+            module.verbose('Removing loading state from element', $context);
             $context.removeClass(className.loading);
           }
         },
@@ -539,9 +534,6 @@ $.api = $.fn.api = function(parameters) {
             if(moduleSelector) {
               title += ' \'' + moduleSelector + '\'';
             }
-            if($allModules.size() > 1) {
-              title += ' ' + '(' + $allModules.size() + ')';
-            }
             if( (console.group !== undefined || console.table !== undefined) && performance.length > 0) {
               console.groupCollapsed(title);
               if(console.table) {
@@ -639,7 +631,7 @@ $.api.settings = {
   namespace       : 'api',
 
   debug           : true,
-  verbose         : false,
+  verbose         : true,
   performance     : true,
 
   // event binding
