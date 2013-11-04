@@ -21,7 +21,7 @@
 
   vertical-align: top;
   background-color: #FFFFFF;
-  color: #888888;
+  color: rgba(0, 0, 0, 0.6);
 
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -94,26 +94,26 @@
   -ms-box-sizing: border-box;
   box-sizing: border-box;
 
-  -moz-border-radius: 0.3125rem;
-  -webkit-border-radius: 0.3125rem;
-  border-radius: 0.3125rem;
+  -moz-border-radius: 0.2rem;
+  -webkit-border-radius: 0.2rem;
+  border-radius: 0.2rem;
 }
 
 .ui.steps .step:first-child {
   padding-left: 1.35em;
-  -webkit-border-radius: 0.3125em 0em 0em 0.3125em;
-  -moz-border-radius: 0.3125em 0em 0em 0.3125em;
-  border-radius: 0.3125em 0em 0em 0.3125em;
+  -webkit-border-radius: 0.2em 0em 0em 0.2em;
+  -moz-border-radius: 0.2em 0em 0em 0.2em;
+  border-radius: 0.2em 0em 0em 0.2em;
 }
 .ui.steps .step:last-child {
-  -webkit-border-radius: 0em 0.3125em 0.3125em 0em;
-  -moz-border-radius: 0em 0.3125em 0.3125em 0em;
-  border-radius: 0em 0.3125em 0.3125em 0em;
+  -webkit-border-radius: 0em 0.2em 0.2em 0em;
+  -moz-border-radius: 0em 0.2em 0.2em 0em;
+  border-radius: 0em 0.2em 0.2em 0em;
 }
 .ui.steps .step:only-child {
-  -webkit-border-radius: 0.3125em;
-  -moz-border-radius: 0.3125em;
-  border-radius: 0.3125em;
+  -webkit-border-radius: 0.2em;
+  -moz-border-radius: 0.2em;
+  border-radius: 0.2em;
 }
 
 .ui.steps .step:last-child {
@@ -131,14 +131,12 @@
 /* Hover */
 .ui.step:hover,
 .ui.step.hover {
-  background-color: #F7F7F7;
   color: rgba(0, 0, 0, 0.8);
 }
 .ui.steps .step.hover:after,
 .ui.steps .step:hover:after,
 .ui.step:hover,
 .ui.step.hover::after {
-  border-left-color: #F7F7F7;
 }
 
 /* Hover */
@@ -159,14 +157,16 @@
 .ui.steps .step.active,
 .ui.active.step {
   cursor: auto;
-  background-color: #555555;
-
-  color: #FFFFFF;
+  color: rgba(0, 0, 0, 0.8);
   font-weight: bold;
+}
+.ui.steps .step.active,
+.ui.active.step {
+  background-color: #FAFAFA;
 }
 .ui.steps .step.active:after,
 .ui.active.steps:after {
-  border-left-color: #555555;
+  border-left-color: #FAFAFA;
 }
 
 /* Disabled */
@@ -203,37 +203,37 @@
 /* Attached */
 .attached.ui.steps {
   margin: 0em;
-  -webkit-border-radius: 0.3125em 0.3125em 0em 0em;
-  -moz-border-radius: 0.3125em 0.3125em 0em 0em;
-  border-radius: 0.3125em 0.3125em 0em 0em;
+  -webkit-border-radius: 0.2em 0.2em 0em 0em;
+  -moz-border-radius: 0.2em 0.2em 0em 0em;
+  border-radius: 0.2em 0.2em 0em 0em;
 }
 .attached.ui.steps .step:first-child {
-  -webkit-border-radius: 0.3125em 0em 0em 0em;
-  -moz-border-radius: 0.3125em 0em 0em 0em;
-  border-radius: 0.3125em 0em 0em 0em;
+  -webkit-border-radius: 0.2em 0em 0em 0em;
+  -moz-border-radius: 0.2em 0em 0em 0em;
+  border-radius: 0.2em 0em 0em 0em;
 }
 .attached.ui.steps .step:last-child {
-  -webkit-border-radius: 0em 0.3125em 0em 0em;
-  -moz-border-radius: 0em 0.3125em 0em 0em;
-  border-radius: 0em 0.3125em 0em 0em;
+  -webkit-border-radius: 0em 0.2em 0em 0em;
+  -moz-border-radius: 0em 0.2em 0em 0em;
+  border-radius: 0em 0.2em 0em 0em;
 }
 
 /* Bottom Side */
 .bottom.attached.ui.steps {
   margin-top: -1px;
-  -webkit-border-radius: 0em 0em 0.3125em 0.3125em;
-  -moz-border-radius: 0em 0em 0.3125em 0.3125em;
-  border-radius: 0em 0em 0.3125em 0.3125em;
+  -webkit-border-radius: 0em 0em 0.2em 0.2em;
+  -moz-border-radius: 0em 0em 0.2em 0.2em;
+  border-radius: 0em 0em 0.2em 0.2em;
 }
 .bottom.attached.ui.steps .step:first-child {
-  -webkit-border-radius: 0em 0em 0em 0.3125em;
-  -moz-border-radius: 0em 0em 0em 0.3125em;
-  border-radius: 0em 0em 0em 0.3125em;
+  -webkit-border-radius: 0em 0em 0em 0.2em;
+  -moz-border-radius: 0em 0em 0em 0.2em;
+  border-radius: 0em 0em 0em 0.2em;
 }
 .bottom.attached.ui.steps .step:last-child {
-  -webkit-border-radius: 0em 0em 0.3125em 0em;
-  -moz-border-radius: 0em 0em 0.3125em 0em;
-  border-radius: 0em 0em 0.3125em 0em;
+  -webkit-border-radius: 0em 0em 0.2em 0em;
+  -moz-border-radius: 0em 0em 0.2em 0em;
+  border-radius: 0em 0em 0.2em 0em;
 }
 
 

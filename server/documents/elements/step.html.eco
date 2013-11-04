@@ -12,7 +12,7 @@ type        : 'UI Element'
 
   <div class="peek">
     <div class="ui vertical pointing secondary menu">
-      <a class="active item">Element</a>
+      <a class="active item">Types</a>
       <a class="item">Groups</a>
       <a class="item">States</a>
       <a class="item">Variations</a>
@@ -25,6 +25,16 @@ type        : 'UI Element'
     <p>A step</p>
     <div class="ui steps">
       <div class="ui step">
+        Shipping
+      </div>
+    </div>
+  </div>
+
+  <div class="example">
+    <h4 class="ui header">Completed Step</h4>
+    <p>A completed step</p>
+    <div class="ui steps">
+      <div class="ui completed step">
         Shipping
       </div>
     </div>
