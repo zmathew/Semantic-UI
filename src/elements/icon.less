@@ -483,67 +483,15 @@ i.icon.right {
     Loading
 ---------------*/
 
-i.icon.loading {
-  -webkit-animation: icon-loading 2s linear infinite;
-  -moz-animation: icon-loading 2s linear infinite;
-  -ms-animation: icon-loading 2s linear infinite;
-  -o-animation: icon-loading 2s linear infinite;
+i.icon.loading::before {
   animation: icon-loading 2s linear infinite;
 }
 @keyframes icon-loading {
  from {
-    -webkit-transform: rotate(0deg);
-    -moz-transform: rotate(0deg);
-    -o-transform: rotate(0deg);
-    -ms-transform: rotate(0deg);
     transform: rotate(0deg);
  }
  to {
-    -webkit-transform: rotate(360deg);
-    -moz-transform: rotate(360deg);
-    -o-transform: rotate(360deg);
-    -ms-transform: rotate(360deg);
     transform: rotate(360deg);
- }
-}
-@-moz-keyframes icon-loading {
- from {
-   -moz-transform: rotate(0deg);
-   transform: rotate(0deg);
- }
- to {
-   -moz-transform: rotate(360deg);
-   transform: rotate(360deg);
- }
-}
-@-webkit-keyframes icon-loading {
- from {
-   -webkit-transform: rotate(0deg);
-   transform: rotate(0deg);
- }
- to {
-   -webkit-transform: rotate(360deg);
-   transform: rotate(360deg);
- }
-}
-@-ms-keyframes icon-loading {
- from {
-   -ms-transform: rotate(0deg);
-   transform: rotate(0deg);
- }
- to {
-   -ms-transform: rotate(360deg);
-   transform: rotate(360deg);
- }
-}
-@-o-keyframes icon-loading {
- from {
-   -o-transform: rotate(0deg);
-   transform: rotate(0deg);
- }
- to {
-   -o-transform: rotate(360deg);
-   transform: rotate(360deg);
  }
 }
 

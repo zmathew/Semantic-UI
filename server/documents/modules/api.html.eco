@@ -14,48 +14,61 @@ type        : 'UI Behavior'
 
 <div class="main container">
   <div class="ui active tab" data-tab="overview">
-
-    <p>Semantic API helps attach server events to UI elements. There a few key features which make API more useful then jQuery AJAX or and simpler than MVC patterns.</p>
-
-    <h3 class="ui header">Why use API?</h3>
-    <div class="ui relaxed list">
-      <div class="item">
-        <i class="check icon"></i>
-        <div class="content">
-          <div class="header">Designed for UI Feedback</div>
-          <p>API is built specifically to interact with UI state, allowing interesting features like setting a minimum perceived request time to set allow for loading animations to not just flash on and off</p>
+    <div class="ui raised segment">
+      <div class="ui two column stackable grid">
+        <div class="row">
+          <div class="sixteen wide column">
+            <p>Semantic API helps attach server events to UI elements. There a few key features which make API more useful then jQuery AJAX or and simpler than MVC patterns.</p>
+          </div>
         </div>
-      </div>
-      <div class="item">
-        <i class="check icon"></i>
-        <div class="content">
-          <div class="header">Organize your Endpoints, Know your API</div>
-          <p>Using API makes sure you manage your endpoints in one location, which means you have a complete list of all API endpoints in one location to know the full breadth of your API, and you can update endpoints from a single file.</p>
+        <div class="row">
+          <div class="column">
+            <div class="content">
+              <div class="ui dividing header"><i class="green check icon"></i>Enhance Your User's Experience</div>
+              <p>API is built specifically to interact with user interfaces, allowing features like, ui state management, rate throttling, single-request limits, minimum request time, and other features specifically designed to make server loads more human-friendly.</p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="content">
+              <div class="ui dividing header"><i class="green check icon"></i>Your Entire API in one place</div>
+              <p>Using API helps wrangle in your API endpoints, by managing them together as a whole. Update all your endpoints from a single location. Provide developers access to your API by exporting your API endpoints for others to use.</p>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="item">
-        <i class="check icon"></i>
-        <div class="content">
-          <div class="header">URL Templating for REST</div>
-          <p>API allows your API endpoints to be stored with url variables that are replaced at run-time. This means you dont need to manually update urls to match the data used for an endpoint.</p>
-        </div>
-      </div>
-      <div class="item">
-        <i class="check icon"></i>
-        <div class="content">
-          <div class="header">Performance tools built in</div>
-          <p>API is built with the same trace and performance tools as other Semantic components allowing you to track the execution time and look at API traces in the console to help debug issues quicker.</p>
+      <div class="row">
+          <div class="column">
+            <div class="content">
+              <div class="ui dividing header"><i class="green check icon"></i>URL Templating built In</div>
+              <p>API is made for REST. Store your API endpoints with url variables that are replaced at run-time. No need to manually update urls to match data, its bound automatically</p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="content">
+              <div class="ui dividing header"><i class="green check icon"></i>Server Traces For Humans</div>
+              <p>API is built with the same trace and performance tools as other Semantic components allowing you to view english language traces of server requests letting you see where things fail.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
   </div>
 
   <div class="ui tab" data-tab="usage">
     <div class="fixed column">
       <div class="content">
-        <div class="ui teal follow button" data-id="5209">
-          Follow
+        <h2 class="ui header">Demo</h2>
+        <div class="ui items">
+          <div class="item">
+            <div class="image">
+              <img src="/images/demo/highres3.jpg">
+            </div>
+            <div class="content">
+              <div class="ui fluid adopt toggle button" data-id="5209">
+                <i class="checkmark icon"></i>
+                <span class="text">Adopt</span>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -63,19 +76,18 @@ type        : 'UI Behavior'
 
       <h3 class="ui header">1. Define Your API</h3>
       <p><b>API</b> works best when using a named list of endpoints. This means you can maintain all of your website's API endpoints in a single location, without having to update them across the site.</p>
-      <p>To do this you must include a list of named endpoints before calling <code>$.api</code> on any page. The easiest way to do this is to have it available in a stand-alone configuration file</p>
+      <p>To do this you must include a list of named endpoints before calling <code>$.api</code> on any page. The easiest way to do this is to have it available in a stand-alone configuration file.</p>
+
+      <p>For the sake of this example we will use Github's public API as an example</p>
       <div class="evaluated code">
-        /* Define API */
-        var api = {
-          'get user'          : '/api/user/{$id}',
-          'update user'       : '/api/user/save/{$id}',
-          'follow user'       : '/api/follow/{$id}',
-          'change preference' : '/api/preference/{name}/{$value}'
+        /* "Config.js" - Define API endpoints once globally */
+        $.fn.api.settings.api = {
+          'follow user' : '/api/follow/{$id}',
+          'user info'   : '/api/user/{$id}'
         };
-        $.fn.api.settings.api = api;
       </div>
       <div class="code" data-type="html">
-        <!-- Include on any page using api !-->
+        <!-- Include on any page using API !-->
         <script src="/config.js"></script>
       </div>
 
@@ -84,12 +96,9 @@ type        : 'UI Behavior'
       <p>Any element can have an API action attached, by default the action will occur on the most relevant event for the type of element. For example a button will use on <code>click</code> or an input <code>oninputchange</code></p>
 
       <div class="evaluated code">
-      $('.follow.button')
+      $('.adopt.button')
         .api({
-          action: 'follow user',
-          complete: function() {
-            alert('Tada');
-          }
+          action: 'follow user'
         })
       ;
       </div>
@@ -98,12 +107,13 @@ type        : 'UI Behavior'
       <p>API couples well with <a href="#">ui state</a>, a component used for managing text state and class names of elements.</p>
       <p>State will automatically apply the class <code>active</code> on API success, and update any text nodes with new values specified. This example updates the text of a follow button to "following" when the API action is successful, after flashing the text success.</p>
       <div class="evaluated code">
-      $('.follow.button')
+      $('.adopt.button')
         .state({
           text: {
-            inactive : 'Follow',
-            active   : 'Following',
-            flash    : 'Success'
+            inactive   : 'Adopt',
+            active     : 'Adopted',
+            deactivate : 'Undo',
+            flash      : 'Success'
           }
         })
       ;
@@ -113,12 +123,12 @@ type        : 'UI Behavior'
 
       <p>When an API action occurs, templated url data is replaced with data you specify to be sent to the server.</p>
       <div class="code" data-type="html">
-        <div class="ui follow button" data-id="5209"></div>
+        <div class="ui adopt button" data-id="5209"></div>
       </div>
       <div class="ui horizontal divider">Or</div>
       <p>Alternatively you can modify the data before sending to server</p>
       <div class="code">
-      $('.follow.button')
+      $('.adopt.button')
         .api('setting', 'beforeSend', function(settings) {
           settings.urlData.id = 5209;
           return settings;
