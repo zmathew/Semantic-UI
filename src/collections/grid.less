@@ -139,68 +139,68 @@ body > .ui.grid {
 --------------------*/
 
 /* Sizing Combinations */
-.ui.grid > .row > .one.wide.column,
-.ui.grid > .one.wide.column {
+.ui.grid > .row > .column[class*="one wide"],
+.ui.grid > .column[class*="one wide"] {
   width: 6.25% !important;
 }
-.ui.grid > .row > .two.wide.column,
-.ui.grid > .two.wide.column {
+.ui.grid > .row > .column[class*="two wide"],
+.ui.grid > .column[class*="two wide"] {
   width: 12.5% !important;
 }
-.ui.grid > .row > .three.wide.column,
-.ui.grid > .three.wide.column {
+.ui.grid > .row > .column[class*="three wide"],
+.ui.grid > .column[class*="three wide"] {
   width: 18.75% !important;
 }
-.ui.grid > .row > .four.wide.column,
-.ui.grid > .four.wide.column {
+.ui.grid > .row > .column[class*="four wide"],
+.ui.grid > .column[class*="four wide"] {
   width: 25% !important;
 }
-.ui.grid > .row > .five.wide.column,
-.ui.grid > .five.wide.column {
+.ui.grid > .row > .column[class*="five wide"],
+.ui.grid > .column[class*="five wide"] {
   width: 31.25% !important;
 }
-.ui.grid > .row > .six.wide.column,
-.ui.grid > .six.wide.column {
+.ui.grid > .row > .column[class*="six wide"],
+.ui.grid > .column[class*="six wide"] {
   width: 37.5% !important;
 }
-.ui.grid > .row > .seven.wide.column,
-.ui.grid > .seven.wide.column {
+.ui.grid > .row > .column[class*="seven wide"],
+.ui.grid > .column[class*="seven wide"] {
   width: 43.75% !important;
 }
-.ui.grid > .row > .eight.wide.column,
-.ui.grid > .eight.wide.column {
+.ui.grid > .row > .column[class*="eight wide"],
+.ui.grid > .column[class*="eight wide"] {
   width: 50% !important;
 }
-.ui.grid > .row > .nine.wide.column,
-.ui.grid > .nine.wide.column {
+.ui.grid > .row > .column[class*="nine wide"],
+.ui.grid > .column[class*="nine wide"] {
   width: 56.25% !important;
 }
-.ui.grid > .row > .ten.wide.column,
-.ui.grid > .ten.wide.column {
+.ui.grid > .row > .column[class*="ten wide"],
+.ui.grid > .column[class*="ten wide"] {
   width: 62.5% !important;
 }
-.ui.grid > .row > .eleven.wide.column,
-.ui.grid > .eleven.wide.column {
+.ui.grid > .row > .column[class*="eleven wide"],
+.ui.grid > .column[class*="eleven wide"] {
   width: 68.75% !important;
 }
-.ui.grid > .row > .twelve.wide.column,
-.ui.grid > .twelve.wide.column {
+.ui.grid > .row > .column[class*="twelve wide"],
+.ui.grid > .column[class*="twelve wide"] {
   width: 75% !important;
 }
-.ui.grid > .row > .thirteen.wide.column,
-.ui.grid > .thirteen.wide.column {
+.ui.grid > .row > .column[class*="thirteen wide"],
+.ui.grid > .column[class*="thirteen wide"] {
   width: 81.25% !important;
 }
-.ui.grid > .row > .fourteen.wide.column,
-.ui.grid > .fourteen.wide.column {
+.ui.grid > .row > .column[class*="fourteen wide"],
+.ui.grid > .column[class*="fourteen wide"] {
   width: 87.5% !important;
 }
-.ui.grid > .row > .fifteen.wide.column,
-.ui.grid > .fifteen.wide.column {
+.ui.grid > .row > .column[class*="fifteen wide"],
+.ui.grid > .column[class*="fifteen wide"] {
   width: 93.75% !important;
 }
-.ui.grid > .row > .sixteen.wide.column,
-.ui.grid > .sixteen.wide.column {
+.ui.grid > .row > .column[class*="sixteen wide"],
+.ui.grid > .column[class*="sixteen wide"] {
   width: 100% !important;
 }
 
@@ -215,84 +215,84 @@ body > .ui.grid {
 }
 
 /* Assume full width with one column */
-.ui.one.column.grid > .row > .column,
-.ui.one.column.grid > .column,
-.ui.grid > .one.column.row > .column {
+.ui.grid[class*="one column"] > .row > .column,
+.ui.grid[class*="one column"] > .column,
+.ui.grid > .row[class*="one column"] > .column {
   width: 100%;
 }
-.ui.two.column.grid > .row > .column,
-.ui.two.column.grid > .column,
-.ui.grid > .two.column.row > .column {
+.ui.grid[class*="two column"] > .row > .column,
+.ui.grid[class*="two column"] > .column,
+.ui.grid > .row[class*="two column"] > .column {
   width: 50%;
 }
-.ui.three.column.grid > .row > .column,
-.ui.three.column.grid > .column,
-.ui.grid > .three.column.row > .column {
+.ui.grid[class*="three column"] > .row > .column,
+.ui.grid[class*="three column"] > .column,
+.ui.grid > .row[class*="three column"] > .column {
   width: 33.3333%;
 }
-.ui.four.column.grid > .row > .column,
-.ui.four.column.grid > .column,
-.ui.grid > .four.column.row > .column {
+.ui.grid[class*="four column"] > .row > .column,
+.ui.grid[class*="four column"] > .column,
+.ui.grid > .row[class*="four column"] > .column {
   width: 25%;
 }
-.ui.five.column.grid > .row > .column,
-.ui.five.column.grid > .column,
-.ui.grid > .five.column.row > .column {
+.ui.grid[class*="five column"] > .row > .column,
+.ui.grid[class*="five column"] > .column,
+.ui.grid > .row[class*="five column"] > .column {
   width: 20%;
 }
-.ui.six.column.grid > .row > .column,
-.ui.six.column.grid > .column,
-.ui.grid > .six.column.row > .column {
+.ui.grid[class*="six column"] > .row > .column,
+.ui.grid[class*="six column"] > .column,
+.ui.grid > .row[class*="six column"] > .column {
   width: 16.66667%;
 }
-.ui.seven.column.grid > .row > .column,
-.ui.seven.column.grid > .column,
-.ui.grid > .seven.column.row > .column {
+.ui.grid[class*="seven column"] > .row > .column,
+.ui.grid[class*="seven column"] > .column,
+.ui.grid > .row[class*="seven column"] > .column {
   width: 14.2857%;
 }
-.ui.eight.column.grid > .row > .column,
-.ui.eight.column.grid > .column,
-.ui.grid > .eight.column.row > .column {
+.ui.grid[class*="eight column"] > .row > .column,
+.ui.grid[class*="eight column"] > .column,
+.ui.grid > .row[class*="eight column"] > .column {
   width: 12.5%;
 }
-.ui.nine.column.grid > .row > .column,
-.ui.nine.column.grid > .column,
-.ui.grid > .nine.column.row > .column {
+.ui.grid[class*="nine column"] > .row > .column,
+.ui.grid[class*="nine column"] > .column,
+.ui.grid > .row[class*="nine column"] > .column {
   width: 11.1111%;
 }
-.ui.ten.column.grid > .row > .column,
-.ui.ten.column.grid > .column,
-.ui.grid > .ten.column.row > .column {
+.ui[class*="ten column"].grid > .row > .column,
+.ui[class*="ten column"].grid > .column,
+.ui.grid > [class*="ten column"].row > .column {
   width: 10%;
 }
-.ui.eleven.column.grid > .row > .column,
-.ui.eleven.column.grid > .column,
-.ui.grid > .eleven.column.row > .column {
+.ui.grid[class*="eleven column"] > .row > .column,
+.ui.grid[class*="eleven column"] > .column,
+.ui.grid > .row[class*="eleven column"] > .column {
   width: 9.0909%;
 }
-.ui.twelve.column.grid > .row > .column,
-.ui.twelve.column.grid > .column,
-.ui.grid > .twelve.column.row > .column {
+.ui.grid[class*="twelve column"] > .row > .column,
+.ui.grid[class*="twelve column"] > .column,
+.ui.grid > .row[class*="twelve column"] > .column {
   width: 8.3333%;
 }
-.ui.thirteen.column.grid > .row > .column,
-.ui.thirteen.column.grid > .column,
-.ui.grid > .thirteen.column.row > .column {
+.ui[class*="thirteen column"].grid > .row > .column,
+.ui[class*="thirteen column"].grid > .column,
+.ui.grid > [class*="thirteen column"].row > .column {
   width: 7.6923%;
 }
-.ui.fourteen.column.grid > .row > .column,
-.ui.fourteen.column.grid > .column,
-.ui.grid > .fourteen.column.row > .column {
+.ui.grid[class*="fourteen column"] > .row > .column,
+.ui.grid[class*="fourteen column"] > .column,
+.ui.grid > .row[class*="fourteen column"] > .column {
   width: 7.1428%;
 }
-.ui.fifteen.column.grid > .row > .column,
-.ui.fifteen.column.grid > .column,
-.ui.grid > .fifteen.column.row > .column {
+.ui.grid[class*="fifteen column"] > .row > .column,
+.ui.grid[class*="fifteen column"] > .column,
+.ui.grid > .row[class*="fifteen column"] > .column {
   width: 6.6666%;
 }
-.ui.sixteen.column.grid > .row > .column,
-.ui.sixteen.column.grid > .column,
-.ui.grid > .sixteen.column.row > .column {
+.ui.grid[class*="sixteen column"] > .row > .column,
+.ui.grid[class*="sixteen column"] > .column,
+.ui.grid > .row[class*="sixteen column"] > .column {
   width: 6.25%;
 }
 
@@ -321,10 +321,10 @@ body > .ui.grid {
        "Floated"
 -----------------------*/
 
-.ui.grid .left.floated.column {
+.ui.grid .column[class*="left floated"] {
   float: left;
 }
-.ui.grid .right.floated.column {
+.ui.grid .column[class*="right floated"] {
   float: right;
 }
 
@@ -436,29 +436,31 @@ body > .ui.grid {
 }
 
 /*----------------------
-  Horizontally Centered
+     Text Alignment
 -----------------------*/
 
 /* Vertical Centered */
-.ui.left.aligned.grid,
-.ui.left.aligned.grid > .row > .column,
-.ui.left.aligned.grid > .column,
-.ui.grid .left.aligned.column,
-.ui.grid > .left.aligned.row > .column {
+.ui.grid[class*="left aligned"],
+.ui.grid[class*="left aligned"] > .row > .column,
+.ui.grid[class*="left aligned"] > .column,
+.ui.grid .column[class*="left aligned"],
+.ui.grid > .row[class*="left aligned"] > .column {
   text-align: left;
 }
-.ui.center.aligned.grid,
-.ui.center.aligned.grid > .row > .column,
-.ui.center.aligned.grid > .column,
-.ui.grid .center.aligned.column,
-.ui.grid > .center.aligned.row > .column {
+
+.ui.grid[class*="center aligned"],
+.ui.grid[class*="center aligned"] > .row > .column,
+.ui.grid[class*="center aligned"] > .column,
+.ui.grid .column[class*="center aligned"],
+.ui.grid > .row[class*="center aligned"] > .column {
   text-align: center;
 }
-.ui.right.aligned.grid,
-.ui.right.aligned.grid > .row > .column,
-.ui.right.aligned.grid > .column,
-.ui.grid .right.aligned.column,
-.ui.grid > .right.aligned.row > .column {
+
+.ui.grid[class*="right aligned"],
+.ui.grid[class*="right aligned"] > .row > .column,
+.ui.grid[class*="right aligned"] > .column,
+.ui.grid .column[class*="right aligned"],
+.ui.grid > .row[class*="right aligned"] > .column {
   text-align: right;
 }
 
@@ -502,17 +504,483 @@ body > .ui.grid {
   Equal Height Columns
 -----------------------*/
 
-.ui.grid > .equal.height.row {
+.ui.grid > .row[class*="equal height"] {
   display: table;
   width: 100%;
 }
-.ui.grid > .equal.height.row > .column {
+.ui.grid > .row[class*="equal height"] > .column {
   display: table-cell;
+}
+
+/*----------------------
+   Device Column Count
+-----------------------*/
+
+/* Mobile Only */
+@media only screen and (max-width : 768px) {
+
+  .ui.grid[class*="one mobile"] > .row > .column,
+  .ui.grid[class*="one mobile"] > .column,
+  .ui.grid > .row[class*="one mobile"] > .column {
+    width: 100%;
+  }
+  .ui.grid[class*="two mobile"] > .row > .column,
+  .ui.grid[class*="two mobile"] > .column,
+  .ui.grid > .row[class*="two mobile"] > .column {
+    width: 50%;
+  }
+  .ui.grid[class*="three mobile"] > .row > .column,
+  .ui.grid[class*="three mobile"] > .column,
+  .ui.grid > .row[class*="three mobile"] > .column {
+    width: 33.3333%;
+  }
+  .ui.grid[class*="four mobile"] > .row > .column,
+  .ui.grid[class*="four mobile"] > .column,
+  .ui.grid > .row[class*="four mobile"] > .column {
+    width: 25%;
+  }
+  .ui.grid[class*="five mobile"] > .row > .column,
+  .ui.grid[class*="five mobile"] > .column,
+  .ui.grid > .row[class*="five mobile"] > .column {
+    width: 20%;
+  }
+  .ui.grid[class*="six mobile"] > .row > .column,
+  .ui.grid[class*="six mobile"] > .column,
+  .ui.grid > .row[class*="six mobile"] > .column {
+    width: 16.66667%;
+  }
+  .ui.grid[class*="seven mobile"] > .row > .column,
+  .ui.grid[class*="seven mobile"] > .column,
+  .ui.grid > .row[class*="seven mobile"] > .column {
+    width: 14.2857%;
+  }
+  .ui.grid[class*="eight mobile"] > .row > .column,
+  .ui.grid[class*="eight mobile"] > .column,
+  .ui.grid > .row[class*="eight mobile"] > .column {
+    width: 12.5%;
+  }
+  .ui.grid[class*="nine mobile"] > .row > .column,
+  .ui.grid[class*="nine mobile"] > .column,
+  .ui.grid > .row[class*="nine mobile"] > .column {
+    width: 11.1111%;
+  }
+  .ui[class*="ten mobile"].grid > .row > .column,
+  .ui[class*="ten mobile"].grid > .column,
+  .ui.grid > [class*="ten mobile"].row > .column {
+    width: 10%;
+  }
+  .ui.grid[class*="eleven mobile"] > .row > .column,
+  .ui.grid[class*="eleven mobile"] > .column,
+  .ui.grid > .row[class*="eleven mobile"] > .column {
+    width: 9.0909%;
+  }
+  .ui.grid[class*="twelve mobile"] > .row > .column,
+  .ui.grid[class*="twelve mobile"] > .column,
+  .ui.grid > .row[class*="twelve mobile"] > .column {
+    width: 8.3333%;
+  }
+  .ui[class*="thirteen mobile"].grid > .row > .column,
+  .ui[class*="thirteen mobile"].grid > .column,
+  .ui.grid > [class*="thirteen mobile"].row > .column {
+    width: 7.6923%;
+  }
+  .ui.grid[class*="fourteen mobile"] > .row > .column,
+  .ui.grid[class*="fourteen mobile"] > .column,
+  .ui.grid > .row[class*="fourteen mobile"] > .column {
+    width: 7.1428%;
+  }
+  .ui.grid[class*="fifteen mobile"] > .row > .column,
+  .ui.grid[class*="fifteen mobile"] > .column,
+  .ui.grid > .row[class*="fifteen mobile"] > .column {
+    width: 6.6666%;
+  }
+  .ui.grid[class*="sixteen mobile"] > .row > .column,
+  .ui.grid[class*="sixteen mobile"] > .column,
+  .ui.grid > .row[class*="sixteen mobile"] > .column {
+    width: 6.25%;
+  }
+
+}
+
+/* Tablet Only */
+@media only screen and (min-width : 768px) and (max-width : 998px) {
+  .ui.grid[class*="one tablet"] > .row > .column,
+  .ui.grid[class*="one tablet"] > .column,
+  .ui.grid > .row[class*="one tablet"] > .column {
+    width: 100%;
+  }
+  .ui.grid[class*="two tablet"] > .row > .column,
+  .ui.grid[class*="two tablet"] > .column,
+  .ui.grid > .row[class*="two tablet"] > .column {
+    width: 50%;
+  }
+  .ui.grid[class*="three tablet"] > .row > .column,
+  .ui.grid[class*="three tablet"] > .column,
+  .ui.grid > .row[class*="three tablet"] > .column {
+    width: 33.3333%;
+  }
+  .ui.grid[class*="four tablet"] > .row > .column,
+  .ui.grid[class*="four tablet"] > .column,
+  .ui.grid > .row[class*="four tablet"] > .column {
+    width: 25%;
+  }
+  .ui.grid[class*="five tablet"] > .row > .column,
+  .ui.grid[class*="five tablet"] > .column,
+  .ui.grid > .row[class*="five tablet"] > .column {
+    width: 20%;
+  }
+  .ui.grid[class*="six tablet"] > .row > .column,
+  .ui.grid[class*="six tablet"] > .column,
+  .ui.grid > .row[class*="six tablet"] > .column {
+    width: 16.66667%;
+  }
+  .ui.grid[class*="seven tablet"] > .row > .column,
+  .ui.grid[class*="seven tablet"] > .column,
+  .ui.grid > .row[class*="seven tablet"] > .column {
+    width: 14.2857%;
+  }
+  .ui.grid[class*="eight tablet"] > .row > .column,
+  .ui.grid[class*="eight tablet"] > .column,
+  .ui.grid > .row[class*="eight tablet"] > .column {
+    width: 12.5%;
+  }
+  .ui.grid[class*="nine tablet"] > .row > .column,
+  .ui.grid[class*="nine tablet"] > .column,
+  .ui.grid > .row[class*="nine tablet"] > .column {
+    width: 11.1111%;
+  }
+  .ui[class*="ten tablet"].grid > .row > .column,
+  .ui[class*="ten tablet"].grid > .column,
+  .ui.grid > [class*="ten tablet"].row > .column {
+    width: 10%;
+  }
+  .ui.grid[class*="eleven tablet"] > .row > .column,
+  .ui.grid[class*="eleven tablet"] > .column,
+  .ui.grid > .row[class*="eleven tablet"] > .column {
+    width: 9.0909%;
+  }
+  .ui.grid[class*="twelve tablet"] > .row > .column,
+  .ui.grid[class*="twelve tablet"] > .column,
+  .ui.grid > .row[class*="twelve tablet"] > .column {
+    width: 8.3333%;
+  }
+  .ui[class*="thirteen tablet"].grid > .row > .column,
+  .ui[class*="thirteen tablet"].grid > .column,
+  .ui.grid > [class*="thirteen tablet"].row > .column {
+    width: 7.6923%;
+  }
+  .ui.grid[class*="fourteen tablet"] > .row > .column,
+  .ui.grid[class*="fourteen tablet"] > .column,
+  .ui.grid > .row[class*="fourteen tablet"] > .column {
+    width: 7.1428%;
+  }
+  .ui.grid[class*="fifteen tablet"] > .row > .column,
+  .ui.grid[class*="fifteen tablet"] > .column,
+  .ui.grid > .row[class*="fifteen tablet"] > .column {
+    width: 6.6666%;
+  }
+  .ui.grid[class*="sixteen tablet"] > .row > .column,
+  .ui.grid[class*="sixteen tablet"] > .column,
+  .ui.grid > .row[class*="sixteen tablet"] > .column {
+    width: 6.25%;
+  }
+}
+
+/* Desktop Only */
+@media only screen and (min-width : 998px) {
+    .ui.grid[class*="one desktop"] > .row > .column,
+  .ui.grid[class*="one desktop"] > .column,
+  .ui.grid > .row[class*="one desktop"] > .column {
+    width: 100%;
+  }
+  .ui.grid[class*="two desktop"] > .row > .column,
+  .ui.grid[class*="two desktop"] > .column,
+  .ui.grid > .row[class*="two desktop"] > .column {
+    width: 50%;
+  }
+  .ui.grid[class*="three desktop"] > .row > .column,
+  .ui.grid[class*="three desktop"] > .column,
+  .ui.grid > .row[class*="three desktop"] > .column {
+    width: 33.3333%;
+  }
+  .ui.grid[class*="four desktop"] > .row > .column,
+  .ui.grid[class*="four desktop"] > .column,
+  .ui.grid > .row[class*="four desktop"] > .column {
+    width: 25%;
+  }
+  .ui.grid[class*="five desktop"] > .row > .column,
+  .ui.grid[class*="five desktop"] > .column,
+  .ui.grid > .row[class*="five desktop"] > .column {
+    width: 20%;
+  }
+  .ui.grid[class*="six desktop"] > .row > .column,
+  .ui.grid[class*="six desktop"] > .column,
+  .ui.grid > .row[class*="six desktop"] > .column {
+    width: 16.66667%;
+  }
+  .ui.grid[class*="seven desktop"] > .row > .column,
+  .ui.grid[class*="seven desktop"] > .column,
+  .ui.grid > .row[class*="seven desktop"] > .column {
+    width: 14.2857%;
+  }
+  .ui.grid[class*="eight desktop"] > .row > .column,
+  .ui.grid[class*="eight desktop"] > .column,
+  .ui.grid > .row[class*="eight desktop"] > .column {
+    width: 12.5%;
+  }
+  .ui.grid[class*="nine desktop"] > .row > .column,
+  .ui.grid[class*="nine desktop"] > .column,
+  .ui.grid > .row[class*="nine desktop"] > .column {
+    width: 11.1111%;
+  }
+  .ui[class*="ten desktop"].grid > .row > .column,
+  .ui[class*="ten desktop"].grid > .column,
+  .ui.grid > [class*="ten desktop"].row > .column {
+    width: 10%;
+  }
+  .ui.grid[class*="eleven desktop"] > .row > .column,
+  .ui.grid[class*="eleven desktop"] > .column,
+  .ui.grid > .row[class*="eleven desktop"] > .column {
+    width: 9.0909%;
+  }
+  .ui.grid[class*="twelve desktop"] > .row > .column,
+  .ui.grid[class*="twelve desktop"] > .column,
+  .ui.grid > .row[class*="twelve desktop"] > .column {
+    width: 8.3333%;
+  }
+  .ui[class*="thirteen desktop"].grid > .row > .column,
+  .ui[class*="thirteen desktop"].grid > .column,
+  .ui.grid > [class*="thirteen desktop"].row > .column {
+    width: 7.6923%;
+  }
+  .ui.grid[class*="fourteen desktop"] > .row > .column,
+  .ui.grid[class*="fourteen desktop"] > .column,
+  .ui.grid > .row[class*="fourteen desktop"] > .column {
+    width: 7.1428%;
+  }
+  .ui.grid[class*="fifteen desktop"] > .row > .column,
+  .ui.grid[class*="fifteen desktop"] > .column,
+  .ui.grid > .row[class*="fifteen desktop"] > .column {
+    width: 6.6666%;
+  }
+  .ui.grid[class*="sixteen desktop"] > .row > .column,
+  .ui.grid[class*="sixteen desktop"] > .column,
+  .ui.grid > .row[class*="sixteen desktop"] > .column {
+    width: 6.25%;
+  }
 }
 
 
 /*----------------------
-     Only (Device)
+     Column Width
+-----------------------*/
+
+@media only screen and (max-width : 768px) {
+  .ui.grid > .row > .column[class*="one mobile"],
+  .ui.grid > .column[class*="one mobile"] {
+    width: 6.25% !important;
+  }
+  .ui.grid > .row > .column[class*="two mobile"],
+  .ui.grid > .column[class*="two mobile"] {
+    width: 12.5% !important;
+  }
+  .ui.grid > .row > .column[class*="three mobile"],
+  .ui.grid > .column[class*="three mobile"] {
+    width: 18.75% !important;
+  }
+  .ui.grid > .row > .column[class*="four mobile"],
+  .ui.grid > .column[class*="four mobile"] {
+    width: 25% !important;
+  }
+  .ui.grid > .row > .column[class*="five mobile"],
+  .ui.grid > .column[class*="five mobile"] {
+    width: 31.25% !important;
+  }
+  .ui.grid > .row > .column[class*="six mobile"],
+  .ui.grid > .column[class*="six mobile"] {
+    width: 37.5% !important;
+  }
+  .ui.grid > .row > .column[class*="seven mobile"],
+  .ui.grid > .column[class*="seven mobile"] {
+    width: 43.75% !important;
+  }
+  .ui.grid > .row > .column[class*="eight mobile"],
+  .ui.grid > .column[class*="eight mobile"] {
+    width: 50% !important;
+  }
+  .ui.grid > .row > .column[class*="nine mobile"],
+  .ui.grid > .column[class*="nine mobile"] {
+    width: 56.25% !important;
+  }
+  .ui.grid > .row > .column[class*="ten mobile"],
+  .ui.grid > .column[class*="ten mobile"] {
+    width: 62.5% !important;
+  }
+  .ui.grid > .row > .column[class*="eleven mobile"],
+  .ui.grid > .column[class*="eleven mobile"] {
+    width: 68.75% !important;
+  }
+  .ui.grid > .row > .column[class*="twelve mobile"],
+  .ui.grid > .column[class*="twelve mobile"] {
+    width: 75% !important;
+  }
+  .ui.grid > .row > .column[class*="thirteen mobile"],
+  .ui.grid > .column[class*="thirteen mobile"] {
+    width: 81.25% !important;
+  }
+  .ui.grid > .row > .column[class*="fourteen mobile"],
+  .ui.grid > .column[class*="fourteen mobile"] {
+    width: 87.5% !important;
+  }
+  .ui.grid > .row > .column[class*="fifteen mobile"],
+  .ui.grid > .column[class*="fifteen mobile"] {
+    width: 93.75% !important;
+  }
+  .ui.grid > .row > .column[class*="sixteen mobile"],
+  .ui.grid > .column[class*="sixteen mobile"] {
+    width: 100% !important;
+  }
+}
+
+/* Tablet Only */
+@media only screen and (min-width : 768px) and (max-width : 998px) {
+  .ui.grid > .row > .column[class*="one tablet"],
+  .ui.grid > .column[class*="one tablet"] {
+    width: 6.25% !important;
+  }
+  .ui.grid > .row > .column[class*="two tablet"],
+  .ui.grid > .column[class*="two tablet"] {
+    width: 12.5% !important;
+  }
+  .ui.grid > .row > .column[class*="three tablet"],
+  .ui.grid > .column[class*="three tablet"] {
+    width: 18.75% !important;
+  }
+  .ui.grid > .row > .column[class*="four tablet"],
+  .ui.grid > .column[class*="four tablet"] {
+    width: 25% !important;
+  }
+  .ui.grid > .row > .column[class*="five tablet"],
+  .ui.grid > .column[class*="five tablet"] {
+    width: 31.25% !important;
+  }
+  .ui.grid > .row > .column[class*="six tablet"],
+  .ui.grid > .column[class*="six tablet"] {
+    width: 37.5% !important;
+  }
+  .ui.grid > .row > .column[class*="seven tablet"],
+  .ui.grid > .column[class*="seven tablet"] {
+    width: 43.75% !important;
+  }
+  .ui.grid > .row > .column[class*="eight tablet"],
+  .ui.grid > .column[class*="eight tablet"] {
+    width: 50% !important;
+  }
+  .ui.grid > .row > .column[class*="nine tablet"],
+  .ui.grid > .column[class*="nine tablet"] {
+    width: 56.25% !important;
+  }
+  .ui.grid > .row > .column[class*="ten tablet"],
+  .ui.grid > .column[class*="ten tablet"] {
+    width: 62.5% !important;
+  }
+  .ui.grid > .row > .column[class*="eleven tablet"],
+  .ui.grid > .column[class*="eleven tablet"] {
+    width: 68.75% !important;
+  }
+  .ui.grid > .row > .column[class*="twelve tablet"],
+  .ui.grid > .column[class*="twelve tablet"] {
+    width: 75% !important;
+  }
+  .ui.grid > .row > .column[class*="thirteen tablet"],
+  .ui.grid > .column[class*="thirteen tablet"] {
+    width: 81.25% !important;
+  }
+  .ui.grid > .row > .column[class*="fourteen tablet"],
+  .ui.grid > .column[class*="fourteen tablet"] {
+    width: 87.5% !important;
+  }
+  .ui.grid > .row > .column[class*="fifteen tablet"],
+  .ui.grid > .column[class*="fifteen tablet"] {
+    width: 93.75% !important;
+  }
+  .ui.grid > .row > .column[class*="sixteen tablet"],
+  .ui.grid > .column[class*="sixteen tablet"] {
+    width: 100% !important;
+  }
+}
+
+/* Desktop Only */
+@media only screen and (min-width : 998px) {
+  .ui.grid > .row > .column[class*="one desktop"],
+  .ui.grid > .column[class*="one desktop"] {
+    width: 6.25% !important;
+  }
+  .ui.grid > .row > .column[class*="two desktop"],
+  .ui.grid > .column[class*="two desktop"] {
+    width: 12.5% !important;
+  }
+  .ui.grid > .row > .column[class*="three desktop"],
+  .ui.grid > .column[class*="three desktop"] {
+    width: 18.75% !important;
+  }
+  .ui.grid > .row > .column[class*="four desktop"],
+  .ui.grid > .column[class*="four desktop"] {
+    width: 25% !important;
+  }
+  .ui.grid > .row > .column[class*="five desktop"],
+  .ui.grid > .column[class*="five desktop"] {
+    width: 31.25% !important;
+  }
+  .ui.grid > .row > .column[class*="six desktop"],
+  .ui.grid > .column[class*="six desktop"] {
+    width: 37.5% !important;
+  }
+  .ui.grid > .row > .column[class*="seven desktop"],
+  .ui.grid > .column[class*="seven desktop"] {
+    width: 43.75% !important;
+  }
+  .ui.grid > .row > .column[class*="eight desktop"],
+  .ui.grid > .column[class*="eight desktop"] {
+    width: 50% !important;
+  }
+  .ui.grid > .row > .column[class*="nine desktop"],
+  .ui.grid > .column[class*="nine desktop"] {
+    width: 56.25% !important;
+  }
+  .ui.grid > .row > .column[class*="ten desktop"],
+  .ui.grid > .column[class*="ten desktop"] {
+    width: 62.5% !important;
+  }
+  .ui.grid > .row > .column[class*="eleven desktop"],
+  .ui.grid > .column[class*="eleven desktop"] {
+    width: 68.75% !important;
+  }
+  .ui.grid > .row > .column[class*="twelve desktop"],
+  .ui.grid > .column[class*="twelve desktop"] {
+    width: 75% !important;
+  }
+  .ui.grid > .row > .column[class*="thirteen desktop"],
+  .ui.grid > .column[class*="thirteen desktop"] {
+    width: 81.25% !important;
+  }
+  .ui.grid > .row > .column[class*="fourteen desktop"],
+  .ui.grid > .column[class*="fourteen desktop"] {
+    width: 87.5% !important;
+  }
+  .ui.grid > .row > .column[class*="fifteen desktop"],
+  .ui.grid > .column[class*="fifteen desktop"] {
+    width: 93.75% !important;
+  }
+  .ui.grid > .row > .column[class*="sixteen desktop"],
+  .ui.grid > .column[class*="sixteen desktop"] {
+    width: 100% !important;
+  }
+}
+
+
+/*----------------------
+      Only (Device)
 -----------------------*/
 
 /* Mobile Only */
@@ -579,6 +1047,8 @@ body > .ui.grid {
     display: table-cell !important;
   }
 }
+
+/* Mobile, Desktop Only */
 @media only screen and (max-width : 768px), (min-width: 998px) {
   .ui.tablet.only.grid,
   .ui.grid > .tablet.only.row,
@@ -587,39 +1057,39 @@ body > .ui.grid {
     display: none;
   }
 }
-/* Computer Only */
+/* Desktop Only */
 @media only screen and (min-width : 998px) {
-  .ui.computer.only.grid,
-  .ui.grid > .computer.only.row {
+  .ui.desktop.only.grid,
+  .ui.grid > .desktop.only.row {
     display: block !important;
   }
-  .ui.grid > .row > .computer.only.column {
+  .ui.grid > .row > .desktop.only.column {
     display: inline-block !important;
   }
-  .ui.divided.computer.only.grid,
-  .ui.celled.computer.only.grid,
-  .ui.divided.computer.only.grid .row,
-  .ui.celled.computer.only.grid .row,
-  .ui.divided.grid .computer.only.row,
-  .ui.celled.grid .computer.only.row,
-  .ui.grid .computer.only.equal.height.row,
-  .ui.computer.only.grid .equal.height.row  {
+  .ui.divided.desktop.only.grid,
+  .ui.celled.desktop.only.grid,
+  .ui.divided.desktop.only.grid .row,
+  .ui.celled.desktop.only.grid .row,
+  .ui.divided.grid .desktop.only.row,
+  .ui.celled.grid .desktop.only.row,
+  .ui.grid .desktop.only.equal.height.row,
+  .ui.desktop.only.grid .equal.height.row  {
     display: table !important;
   }
-  .ui.divided.grid > .row > .computer.only.column,
-  .ui.celled.grid > .row > .computer.only.column,
-  .ui.divided.computer.only.grid > .row > .column,
-  .ui.celled.computer.only.grid > .row > .column,
-  .ui.divided.computer.only.grid > .column,
-  .ui.celled.computer.only.grid > .column {
+  .ui.divided.grid > .row > .desktop.only.column,
+  .ui.celled.grid > .row > .desktop.only.column,
+  .ui.divided.desktop.only.grid > .row > .column,
+  .ui.celled.desktop.only.grid > .row > .column,
+  .ui.divided.desktop.only.grid > .column,
+  .ui.celled.desktop.only.grid > .column {
     display: table-cell !important;
   }
 }
 @media only screen and (max-width : 998px) {
-  .ui.computer.only.grid,
-  .ui.grid > .computer.only.row,
-  .ui.grid > .computer.only.column,
-  .ui.grid > .row > .computer.only.column {
+  .ui.desktop.only.grid,
+  .ui.grid > .desktop.only.row,
+  .ui.grid > .desktop.only.column,
+  .ui.grid > .row > .desktop.only.column {
     display: none;
   }
 }
