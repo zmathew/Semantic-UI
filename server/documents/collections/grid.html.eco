@@ -599,8 +599,47 @@ type        : 'UI Collection'
   <h3 class="ui header">Rows</h3>
 
   <div class="example">
+    <h4 class="ui header">Responsive Column Count</h4>
+    <p>A rows column count can change on different devices.</p>
+    <div class="ui red message">
+      <div class="header">Class Order</div>
+      <p>New to <code>1.0.0</code> word order matters in some variations. Word order adds a degree of complexity to front end development, so it is used sparingly in Semantic.</p>
+    </div>
+    <div class="ui message">
+      <p>For a device to appear with the correct columns, the class names must appear consecutively, for example <code>four column tablet</code> might mistakenly be represented as <code>four column</code> causing it to be four column on all devices. To combat this we use the slight shorthand <code>four (device)</code> which means "four column (device)"</p>
+    </div>
+    <div class="ui message">
+      <p>Columns that span multiple rows <b>will not automatically recieve vertical padding</b>, as the row breaks will occur automatically based on the column counts you specify.</p>
+    </div>
+    <div class="ui grid">
+      <div class="one mobile two tablet four desktop row">
+        <div class="column">
+          <div class="ui segment">
+            Column
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui segment">
+            Column
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui segment">
+            Column
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui segment">
+            Column
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="example">
     <h4 class="ui header">Responsive to Device</h4>
-    <p>A grid can have its columns, or rows only show content for computer, tablet, or mobile.</p>
+    <p>A grid can have its columns, or rows only show content for Desktop, tablet, or mobile.</p>
     <div class="ui text message info ignore">
       <i class="icon heart"></i> Breakpoints are 768px and below for mobile, 768-998px for tablet and 998px+ for pc</i>
     </div>
@@ -618,9 +657,9 @@ type        : 'UI Collection'
         </div>
       </div>
       <div class="three column row">
-        <div class="computer only column">
+        <div class="desktop only column">
           <div class="ui segment">
-            Computer
+            Desktop
           </div>
         </div>
         <div class="tablet mobile only column">
@@ -639,25 +678,25 @@ type        : 'UI Collection'
           </div>
         </div>
       </div>
-      <div class="four column computer only row">
+      <div class="four column desktop only row">
         <div class="column">
           <div class="ui segment">
-            Computer
+            Desktop
           </div>
         </div>
         <div class="column">
           <div class="ui segment">
-            Computer
+            Desktop
           </div>
         </div>
         <div class="column">
           <div class="ui segment">
-            Computer
+            Desktop
           </div>
         </div>
         <div class="column">
           <div class="ui segment">
-            Computer
+            Desktop
           </div>
         </div>
       </div>
@@ -832,6 +871,20 @@ type        : 'UI Collection'
       </div>
     </div>
   </div>
+  <div class="example">
+    <h4 class="ui header">Responsive Width</h4>
+    <p>A column can vary its width depending on the device.</p>
+    <div class="ui three column grid">
+      <div class="six tablet four mobile column">
+        <div class="ui segment"><b>Colume One</b> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum iaculis sapien.</div>
+      </div>
+      <div class="four tablet six mobile column">
+        <div class="ui segment"><b>Colume Two</b> Aliquam lobortis commodo sem ac accumsan. Vestibulum non faucibus lorem. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Curabitur sed lorem lorem. Nam augue erat, dignissim nec aliquam vel, congue et sapien. Integer viverra justo vel nibh suscipit commodo. Nullam ut turpis nibh, in luctus risus. Sed ut risus nec dui mattis porta. Nam nisi magna, ornare mollis congue a, suscipit at nisl.</div>
+      </div>
+      <div class="six mobile six tablet column">
+        <div class="ui segment"><b>Colume Three</b> Donec semper mollis condimentum. Aenean eget rutrum magna. Mauris ornare nibh scelerisque turpis lobortis dignissim. Etiam eleifend justo eget quam semper vulputate. Nulla et risus convallis velit molestie iaculis. Aliquam erat volutpat. </div>
+      </div>
+    </div>
   <div class="example">
     <h4 class="ui header">Column Width</h4>
     <p>A column can vary in width taking up more than a single grid column.</p>
