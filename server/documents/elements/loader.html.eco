@@ -1,12 +1,18 @@
 ---
 layout      : 'default'
 css         : 'loader'
+element     : 'loader'
+elementType : 'element'
+
 title       : 'Loader'
 description : 'Loaders lets a user know to wait for activity to finish'
 type        : 'UI Element'
+
+themes      : ['Default', 'Legacy']
 ---
 
 <%- @partial('header') %>
+<link rel="stylesheet/less" type="text/css" href="/build/less/definitions/elements/loader.less" />
 
 <div class="main container">
 
@@ -19,6 +25,7 @@ type        : 'UI Element'
   </div>
 
   <h2 class="ui dividing header">Types</h2>
+
   <div class="example">
     <h4 class="ui header">Loader</h4>
     <p>A loader</p>
@@ -32,43 +39,15 @@ type        : 'UI Element'
     </div>
   </div>
 
-  <h3 class="ui header">CSS Loaders</h3>
-
-  <div class="example">
-    <h4 class="ui header">Flipping Loader</h4>
-    <p>A loader can animate by flipping</p>
-    <div class="ui segment">
-      <div class="ui active dimmer">
-        <div class="ui flipping loader">
-          <div class="shape"></div>
-          Loading
-        </div>
-      </div>
-      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
-      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
-      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
-    </div>
-  </div>
-  <div class="another example">
-    <div class="ui segment">
-      <div class="ui active dimmer">
-        <div class="ui flipping circular loader">
-          <div class="shape"></div>
-          Loading
-        </div>
-      </div>
-      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
-      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
-      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
-    </div>
-  </div>
-
   <div class="example">
     <h4 class="ui header">Text Loader</h4>
-    <p>A loader can contain text</p>
+    <p>A loader can contain both a glyph showing progress and text</p>
     <div class="ui segment">
       <div class="ui active dimmer">
-        <div class="ui text loader">Loading</div>
+        <div class="ui text loader">
+          <div class="shape"></div>
+          Loading
+        </div>
       </div>
       <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
     </div>
@@ -81,7 +60,6 @@ type        : 'UI Element'
       <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio. Quisque volutpat mattis eros. Nullam malesuada erat ut turpis. Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.</p>
     </div>
   </div>
-
 
   <h2 class="ui dividing header">States</h2>
 

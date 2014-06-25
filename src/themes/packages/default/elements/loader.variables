@@ -13,6 +13,9 @@
 @loaderTopOffset: 50%;
 @loaderLeftOffset: 50%;
 
+/* Text */
+@loaderTextColor: @invertedTextColor;
+@invertedLoaderTextColor: @textColor;
 
 /*-------------------
         Types
@@ -30,28 +33,3 @@
 @smallFontSize: 0.875em;
 @mediumFontSize: 1em;
 @largeFontSize: 1.2em;
-
-@miniLoaderPath: "@{imagePath}/loader-mini.gif";
-@smallLoaderPath: "@{imagePath}/loader-small.gif";
-@mediumLoaderPath: "@{imagePath}/loader-medium.gif";
-@largeLoaderPath: "@{imagePath}/loader-large.gif";
-
-@miniInvertedLoaderPath: "@{imagePath}/loader-mini-inverted.gif";
-@smallInvertedLoaderPath: "@{imagePath}/loader-small-inverted.gif";
-@mediumInvertedLoaderPath: "@{imagePath}/loader-medium-inverted.gif";
-@largeInvertedLoaderPath: "@{imagePath}/loader-large-inverted.gif";
-
-/* Text */
-@loaderTextColor: @invertedTextColor;
-@invertedLoaderTextColor: @textColor;
-
-
-/*-------------------
-        States
---------------------*/
-
-
-
-/*-------------------
-      Variations
---------------------*/

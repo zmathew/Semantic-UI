@@ -150,6 +150,8 @@ semantic.ready = function() {
               less.modifyVars( handler.less.parseFile(content) );
               $themeDropdown
                 .api({
+                  debug: true,
+                  verbose: true,
                   on       : 'now',
                   url      : overrideURL,
                   dataType : 'text',
