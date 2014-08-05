@@ -8,23 +8,26 @@ module.exports = function(grunt) {
     ],
 
     watchTasks = [
-      // compiles less to docs
-      'less:buildDocsCSS',
+      // clean build directory
+      'clean:build',
 
-      // auto prefix doc files
-      'autoprefixer:prefixFile',
+      // copies assets and js over to build dir
+      'copy:srcToBuild',
 
-      // copies assets and js over to docs
-      'copy:srcToDocs',
+      // compiles less
+      'less:buildCSS',
 
-      // copies examples over to docs
-      'copy:examplesToDocs',
+      // auto prefix docs files
+      'autoprefixer:prefixDocs',
+
+      // auto prefix build files
+      'autoprefixer:prefixBuild',
 
       // create concatenated css release
-      'concat:createDocsCSSPackage',
+      'concat:createCSSPackage',
 
       // create concatenated js release
-      'concat:createDocsJSPackage'
+      'concat:createJSPackage',
     ],
 
     testWatchTasks = [

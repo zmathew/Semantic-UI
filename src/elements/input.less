@@ -18,14 +18,19 @@
 /*--------------------
         Inputs
 ---------------------*/
-
+tags-input input {
+  border: none;
+  font-size: 1em;
+  font-family: "Helvetica Neue", "Helvetica", Arial;
+}
 .ui.input {
   display: inline-block;
   position: relative;
 
   color: rgba(0, 0, 0, 0.7);
 }
-.ui.input input {
+.ui.input input,
+.ui.input-pretender {
   width: 100%;
   font-family: "Helvetica Neue", "Helvetica", Arial;
 
@@ -100,7 +105,9 @@
 ---------------------*/
 
 .ui.input input:active,
-.ui.input.down input {
+.ui.input.down input,
+.ui.input-pretender:active,
+.ui.input.down.input-pretender {
   border-color: rgba(0, 0, 0, 0.3);
   background-color: #FAFAFA;
 }
@@ -122,7 +129,9 @@
 ---------------------*/
 
 .ui.input.focus input,
-.ui.input input:focus  {
+.ui.input input:focus,
+.ui.input-pretender.focus,
+.ui.input-pretender:focus  {
   border-color: rgba(0, 0, 0, 0.2);
   color: rgba(0, 0, 0, 0.85);
 }

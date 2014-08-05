@@ -123,7 +123,8 @@
 .ui.form input[type="number"],
 .ui.form input[type="url"],
 .ui.form input[type="tel"],
-.ui.form .ui.input {
+.ui.form .ui.input,
+.ui.form .input-pretender {
   width: 100%;
 }
 .ui.form textarea,
@@ -133,7 +134,8 @@
 .ui.form input[type="password"],
 .ui.form input[type="number"],
 .ui.form input[type="url"],
-.ui.form input[type="tel"] {
+.ui.form input[type="tel"],
+.ui.form .input-pretender {
   margin: 0em;
   padding: 0.65em 1em;
   font-size: 1em;
@@ -215,7 +217,8 @@
 .ui.form input[type="number"]:focus,
 .ui.form input[type="url"]:focus,
 .ui.form input[type="tel"]:focus,
-.ui.form textarea:focus {
+.ui.form textarea:focus,
+.ui.form .input-pretender.focus {
   color: rgba(0, 0, 0, 0.85);
   border-color: rgba(0, 0, 0, 0.2);
   border-bottom-left-radius: 0;
@@ -258,6 +261,7 @@
 .ui.form .fields.error .field input[type="number"],
 .ui.form .fields.error .field input[type="url"],
 .ui.form .fields.error .field input[type="tel"],
+.ui.form .fields.error .field .input-pretender,
 .ui.form .field.error textarea,
 .ui.form .field.error input[type="text"],
 .ui.form .field.error input[type="email"],
@@ -265,7 +269,8 @@
 .ui.form .field.error input[type="password"],
 .ui.form .field.error input[type="number"],
 .ui.form .field.error input[type="url"],
-.ui.form .field.error input[type="tel"] {
+.ui.form .field.error input[type="tel"],
+.ui.form .field.error .input-pretender {
   background-color: #FFFAFA;
   border-color: #E7BEBE;
   border-left: none;
@@ -283,7 +288,8 @@
 .ui.form .field.error input[type="password"]:focus,
 .ui.form .field.error input[type="number"]:focus,
 .ui.form .field.error input[type="url"]:focus,
-.ui.form .field.error input[type="tel"]:focus {
+.ui.form .field.error input[type="tel"]:focus,
+.ui.form .field.error .input-pretender.focus {
   border-color: #ff5050;
   color: #ff5050;
   -webkit-appearance: none;
@@ -647,6 +653,7 @@
 .ui.small.form input[type="number"],
 .ui.small.form input[type="url"],
 .ui.small.form input[type="tel"],
+.ui.small.form .input-pretender,
 .ui.small.form label {
   font-size: 1em;
 }
@@ -7584,12 +7591,18 @@ img.ui.image {
 /*--------------------
         Inputs
 ---------------------*/
+tags-input input {
+  border: none;
+  font-size: 1em;
+  font-family: "Helvetica Neue", "Helvetica", Arial;
+}
 .ui.input {
   display: inline-block;
   position: relative;
   color: rgba(0, 0, 0, 0.7);
 }
-.ui.input input {
+.ui.input input,
+.ui.input-pretender {
   width: 100%;
   font-family: "Helvetica Neue", "Helvetica", Arial;
   margin: 0em;
@@ -7626,7 +7639,9 @@ img.ui.image {
         Active
 ---------------------*/
 .ui.input input:active,
-.ui.input.down input {
+.ui.input.down input,
+.ui.input-pretender:active,
+.ui.input.down.input-pretender {
   border-color: rgba(0, 0, 0, 0.3);
   background-color: #FAFAFA;
 }
@@ -7644,7 +7659,9 @@ img.ui.image {
         Focus
 ---------------------*/
 .ui.input.focus input,
-.ui.input input:focus {
+.ui.input input:focus,
+.ui.input-pretender.focus,
+.ui.input-pretender:focus {
   border-color: rgba(0, 0, 0, 0.2);
   color: rgba(0, 0, 0, 0.85);
 }
@@ -8921,7 +8938,6 @@ a.ui.teal.label:hover:before {
     Striped
 ---------------*/
 .ui.progress.striped .bar {
-  -webkit-background-size: 30px 30px;
   background-size: 30px 30px;
   background-image: -webkit-gradient(linear, left top, right bottom, color-stop(0.25, rgba(255, 255, 255, 0.15)), color-stop(0.25, transparent), color-stop(0.5, transparent), color-stop(0.5, rgba(255, 255, 255, 0.15)), color-stop(0.75, rgba(255, 255, 255, 0.15)), color-stop(0.75, transparent), to(transparent));
   background-image: -webkit-linear-gradient(135deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);

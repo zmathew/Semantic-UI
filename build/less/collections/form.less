@@ -71,7 +71,8 @@
 .ui.form input[type="number"],
 .ui.form input[type="url"],
 .ui.form input[type="tel"],
-.ui.form .ui.input {
+.ui.form .ui.input,
+.ui.form .input-pretender {
   width: 100%;
 }
 
@@ -82,7 +83,8 @@
 .ui.form input[type="password"],
 .ui.form input[type="number"],
 .ui.form input[type="url"],
-.ui.form input[type="tel"] {
+.ui.form input[type="tel"],
+.ui.form .input-pretender {
 
   margin: 0em;
   padding: 0.65em 1em;
@@ -198,7 +200,8 @@
 .ui.form input[type="number"]:focus,
 .ui.form input[type="url"]:focus,
 .ui.form input[type="tel"]:focus,
-.ui.form textarea:focus{
+.ui.form textarea:focus,
+.ui.form .input-pretender.focus {
   color: rgba(0, 0, 0, 0.85);
   border-color: rgba(0, 0, 0, 0.2);
   border-bottom-left-radius: 0;
@@ -250,6 +253,7 @@
 .ui.form .fields.error .field input[type="number"],
 .ui.form .fields.error .field input[type="url"],
 .ui.form .fields.error .field input[type="tel"],
+.ui.form .fields.error .field .input-pretender,
 .ui.form .field.error textarea,
 .ui.form .field.error input[type="text"],
 .ui.form .field.error input[type="email"],
@@ -257,7 +261,8 @@
 .ui.form .field.error input[type="password"],
 .ui.form .field.error input[type="number"],
 .ui.form .field.error input[type="url"],
-.ui.form .field.error input[type="tel"] {
+.ui.form .field.error input[type="tel"],
+.ui.form .field.error .input-pretender {
   background-color: #FFFAFA;
   border-color: #E7BEBE;
   border-left: none;
@@ -279,7 +284,8 @@
 .ui.form .field.error input[type="password"]:focus,
 .ui.form .field.error input[type="number"]:focus,
 .ui.form .field.error input[type="url"]:focus,
-.ui.form .field.error input[type="tel"]:focus{
+.ui.form .field.error input[type="tel"]:focus,
+.ui.form .field.error .input-pretender.focus {
   border-color: rgba(255, 80, 80, 1);
   color: rgba(255, 80, 80, 1);
 
@@ -692,6 +698,7 @@
 .ui.small.form input[type="number"],
 .ui.small.form input[type="url"],
 .ui.small.form input[type="tel"],
+.ui.small.form .input-pretender,
 .ui.small.form label{
   font-size: 1em;
 }
