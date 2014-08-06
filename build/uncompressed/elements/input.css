@@ -14,12 +14,6 @@
 /*--------------------
         Inputs
 ---------------------*/
-tags-input input {
-  width: auto;
-  border: none;
-  font-size: 1em;
-  font-family: "Helvetica Neue", "Helvetica", Arial;
-}
 .ui.input {
   display: inline-block;
   position: relative;
