@@ -14,7 +14,8 @@
 /*--------------------
         Inputs
 ---------------------*/
-.ui.input {
+.ui.input,
+.ui.input-pretender {
   display: inline-block;
   position: relative;
   color: rgba(0, 0, 0, 0.7);
@@ -125,7 +126,8 @@
 /*--------------------
          Icon
 ---------------------*/
-.ui.icon.input > .icon {
+.ui.icon.input > .icon,
+.ui.icon.input-pretender > .icon {
   cursor: default;
   position: absolute;
   opacity: 0.5;
@@ -156,7 +158,8 @@
   right: 0.5em;
 }
 /* Left Side */
-.ui.left.icon.input > .icon {
+.ui.left.icon.input > .icon,
+.ui.left.icon.input-pretender > .icon {
   right: auto;
   left: 1px;
   border-radius: 0.3125em 0em 0em 0.3125em;
